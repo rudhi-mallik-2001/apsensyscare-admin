@@ -1,10 +1,10 @@
 import './App.css'
-import {UpperBar} from './components'
+import Dashboard from './components/dashboard/Dashboard'
 function App() {
 
   return (
-    <div className='w-full h-screen bg-[red]'>
-      <UpperBar/>
+    <div className='w-full h-screen bg-white'>
+      <Dashboard/>
     </div>
   )
 }
