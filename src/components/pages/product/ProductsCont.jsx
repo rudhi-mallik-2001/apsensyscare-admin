@@ -22,4 +22,4 @@ const ProductsCont = () => {
   )
 }
 
-export default ProductsCont
+export default ProductsCont 

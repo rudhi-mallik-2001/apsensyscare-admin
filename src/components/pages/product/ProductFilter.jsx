@@ -41,4 +41,4 @@ const ProductFilter = ({ handelFilter, filterItem = null }) => {
     )
 }
 
-export default ProductFilter
+export default ProductFilter 

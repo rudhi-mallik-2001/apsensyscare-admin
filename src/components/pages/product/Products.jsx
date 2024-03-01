@@ -26,7 +26,7 @@ const Products = ({ filterItem }) => {
               <div>
                 <img className='w-[100px]' src={`https://apsensyscare.com/Image/all_products/${item.product_image}`} alt="" srcset="" />
               </div>
-              <p>{item.name}</p>
+              <p>{item.name}</p> 
             </Link>
           )
         }) : <></>
