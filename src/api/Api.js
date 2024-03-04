@@ -22,17 +22,16 @@ export const fetchProductdetailsById = async (id) => {
 export const updateProductsById = async (details) => {
     return await axios
         .post("http://apsensyscare.com/backend_api/updateproducts",details)
-        .then((response) => response.data.productdetails)
+        .then((response) => response.data)
 };  
 export const updateCategoryById = async (details) => {
     return await axios
         .post("http://apsensyscare.com/backend_api/updateCategory",details)
-        .then((response) => response.data.productdetails)
+        .then((response) => response.data)
 };
 export const fetchCategoryById = async (id) => {
     return await axios
         .post("http://apsensyscare.com/backend_api/categorydetailsbyid",id)
-        .then((response) => response.data.productdetails)
 };
 export const uploadImage = async (data) => {
     return await axios
