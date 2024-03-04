@@ -6,15 +6,19 @@ const CategoryEdit = () => {
     // console.log(id);
     const ref = useRef()
     const [clicktab, setClicktab] = useState('2');
-    
+    const[categorydetails,setCategorydetails]=useState({});
     const handelclick = (ref) => {
         setClicktab(ref)
     }
-    useEffect(()=>{
-      fetchCategoryById(id).then((res)=>{
-        console.log(res);
+    useEffect(() => {
+      fetchCategoryById(id).then((res) => { 
+          console.log('called')
+          setCategorydetails(res[0]);
       })
-    },[id])
+  }, [id])
+    const updateCategory = (value, key) => {
+      setCategorydetails((prev) => { return { ...prev, [key]: value } });
+  }
     return (
         <div className='w-[calc(100%_-_200px)] p-3'>
 
@@ -41,7 +45,7 @@ const CategoryEdit = () => {
                     />
                     <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box rounded-b-[0px] p-6">
                         <div className='w-full flex flex-row flex-wrap justify-start items-start gap-2'>
-                           
+                           <CategoryDetailsEdit category={categorydetails} updateCategory={updateCategory} />
                         </div>
                     </div>
                     
