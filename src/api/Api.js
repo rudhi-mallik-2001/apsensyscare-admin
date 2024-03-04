@@ -24,3 +24,13 @@ export const updateProductsById = async (details) => {
         .post("http://apsensyscare.com/backend_api/updateproducts",details)
         .then((response) => response.data.productdetails)
 };  
+export const updateCategoryById = async (details) => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/updateCategory",details)
+        .then((response) => response.data.productdetails)
+};
+export const fetchCategoryById = async (id) => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/categorydetailsbyid",id)
+        .then((response) => response.data.productdetails)
+};    

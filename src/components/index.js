@@ -6,9 +6,10 @@ import Categories from './pages/category/Categories.jsx'
 import CategoryEdit from './pages/category/CategoryEdit.jsx'
 import Input from '../others/Input.jsx'
 import ProductDetailsEdit from './pages/product/ProductDetailsEdit.jsx'
-import { fetchProducts, fetchAllProducts, fetchAllCategory,fetchProductdetailsById,updateProductsById } from '../api/Api'
+import CategoryDetailsEdit from './pages/category/CategoryDetailsEdit.jsx'
+import { fetchProducts, fetchAllProducts, fetchAllCategory,fetchProductdetailsById,updateProductsById,updateCategoryById,fetchCategoryById } from '../api/Api'
 
 
 
 
-export { UpperBar, SideBar, ProductsCont, Categories, ProductEdit,CategoryEdit, fetchProducts, fetchAllProducts, fetchAllCategory,fetchProductdetailsById,Input,ProductDetailsEdit,updateProductsById} 
+export { UpperBar, SideBar, ProductsCont, Categories, ProductEdit,CategoryEdit, fetchProducts, fetchAllProducts, fetchAllCategory,fetchProductdetailsById,Input,ProductDetailsEdit,updateProductsById,CategoryDetailsEdit,updateCategoryById,fetchCategoryById}  
