@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import { Input, updateProductsById, uploadImage } from '../../index'
+import { Input, updateProductsById, uploadImage,Image } from '../../index'
 import { toast } from 'react-toastify'
 
 function ProductDetailsEdit({ product, updateDetails }) {
-    // console.log(product);
-    const [selectedImage, setSelectedImage] = useState(null);
+    
     const handelInputs = (value, key) => {
         updateDetails(value, key)
     }
@@ -13,23 +12,7 @@ function ProductDetailsEdit({ product, updateDetails }) {
             toast("Update success");
         })
     }
-    const handleImageChange = (e) => {
-        const file = e.target.files[0];
-        setSelectedImage(file);
-    };
-    const handleUpload = (e) => {
-        e.preventDefault()
-        if (!selectedImage) {
-            alert("Please select an image before uploading.");
-            return;
-        }
-
-        const formdata = new FormData();
-        formdata.append('fileToUpload', selectedImage);
-        uploadImage(formdata).then((res) => {
-            console.log(res);
-        })
-    }
+    
     return (
         <div className='w-[100%] p-2 flex flex-row  gap-2 border rounded-md'>
             <div className='w-[100%]'>
@@ -103,19 +86,10 @@ function ProductDetailsEdit({ product, updateDetails }) {
             </div>
             <div className='w-full  flex flex-col justify-start items-start gap-2 p-6'>
                 <div className='border-2 rounded-md'>
-                    <img src={`https://apsensyscare.com/Image/all_products/${product.product_image}`} alt="" srcset="" />
+                    <img src={`https://apsensyscare.com/Image/all_products/${product.product_image}`} alt="" srcSet="" />
                 </div>
-                <form enctype="multipart/form-data" onSubmit={handleUpload}>
-                    <input
-                        type="file"
-                        className="file-input file-input-bordered w-full max-w-xs"
-                        placeholder="Daisy"
-                        accept="image/*"
-                        onChange={handleImageChange}
-                        name="fileToUpload"
-                    />
-                    <button type='butt' class="w-[30%] border flex flex-row justify-around cursor-pointer rounded-md hover:bg-[#ffb356] hover:text-[#fff] py-1" >Upload</button>
-                </form>
+                
+                <Image/>
             </div>
         </div>
     )

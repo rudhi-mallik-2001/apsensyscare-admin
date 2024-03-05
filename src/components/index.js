@@ -5,6 +5,7 @@ import ProductEdit from './pages/product/ProductEdit.jsx'
 import Categories from './pages/category/Categories.jsx'
 import CategoryEdit from './pages/category/CategoryEdit.jsx'
 import Input from '../others/Input.jsx'
+import Image from '../others/Image.jsx'
 import ProductDetailsEdit from './pages/product/ProductDetailsEdit.jsx'
 import CategoryDetailsEdit from './pages/category/CategoryDetailsEdit.jsx'
 import Addcategorycont from './pages/category/CategoryDetailsEdit.jsx'
@@ -13,4 +14,4 @@ import { fetchProducts, fetchAllProducts, fetchAllCategory,fetchProductdetailsBy
 
 
  
-export { UpperBar, SideBar, ProductsCont, Categories, ProductEdit,CategoryEdit, fetchProducts, fetchAllProducts, fetchAllCategory,fetchProductdetailsById,Input,ProductDetailsEdit,updateProductsById,CategoryDetailsEdit,updateCategoryById,fetchCategoryById,uploadImage,Addcategory,Addcategorycont}  
+export { UpperBar, SideBar, ProductsCont, Categories, ProductEdit,CategoryEdit, fetchProducts, fetchAllProducts, fetchAllCategory,fetchProductdetailsById,Input,ProductDetailsEdit,updateProductsById,CategoryDetailsEdit,updateCategoryById,fetchCategoryById,uploadImage,Addcategory,Addcategorycont,Image}  
