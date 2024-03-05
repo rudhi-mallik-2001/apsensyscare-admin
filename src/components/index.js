@@ -5,11 +5,13 @@ import ProductEdit from './pages/product/ProductEdit.jsx'
 import Categories from './pages/category/Categories.jsx'
 import CategoryEdit from './pages/category/CategoryEdit.jsx'
 import Input from '../others/Input.jsx'
+import Image from '../others/Image.jsx'
 import ProductDetailsEdit from './pages/product/ProductDetailsEdit.jsx'
 import CategoryDetailsEdit from './pages/category/CategoryDetailsEdit.jsx'
-import { fetchProducts, fetchAllProducts, fetchAllCategory,fetchProductdetailsById,updateProductsById,updateCategoryById,fetchCategoryById ,uploadImage} from '../api/Api'
+import Addcategorycont from './pages/category/CategoryDetailsEdit.jsx'
+import { fetchProducts, fetchAllProducts, fetchAllCategory,fetchProductdetailsById,updateProductsById,updateCategoryById,fetchCategoryById,Addcategory,uploadImage} from '../api/Api'
 
 
 
-
-export { UpperBar, SideBar, ProductsCont, Categories, ProductEdit,CategoryEdit, fetchProducts, fetchAllProducts, fetchAllCategory,fetchProductdetailsById,Input,ProductDetailsEdit,updateProductsById,CategoryDetailsEdit,updateCategoryById,fetchCategoryById,uploadImage}  
+ 
+export { UpperBar, SideBar, ProductsCont, Categories, ProductEdit,CategoryEdit, fetchProducts, fetchAllProducts, fetchAllCategory,fetchProductdetailsById,Input,ProductDetailsEdit,updateProductsById,CategoryDetailsEdit,updateCategoryById,fetchCategoryById,uploadImage,Addcategory,Addcategorycont,Image}  

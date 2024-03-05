@@ -33,7 +33,13 @@ export const fetchCategoryById = async (id) => {
     return await axios
         .post("http://apsensyscare.com/backend_api/categorydetailsbyid",id)
         .then((response) => response.data.categorydetails)
+};   
+export const Addcategory = async (category) => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/addcategory",category)
+        .then((response) => response.data)
 };
+
 export const uploadImage = async (data) => {
     return await axios
         .post("http://apsensyscare.com/backend_api/i-upload",data,)

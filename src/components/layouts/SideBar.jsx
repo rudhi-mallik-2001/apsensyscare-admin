@@ -43,7 +43,7 @@ const SideBar = () => {
                                 <path d="M8 4a.5.5 0 0 1 .5.5V6H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V7H6a.5.5 0 0 1 0-1h1.5V4.5A.5.5 0 0 1 8 4" />
                             </svg>
                         </div>
-                        Catelogs
+                        Catelogs 
                     </div>
                     <div className="collapse-content flex flex-col gap-2 py-0">
                         <Link to="/products" className='flex flex-row gap-2 cursor-pointer pt-3'>
