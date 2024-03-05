@@ -20,7 +20,7 @@ const ProductEdit = () => {
     const updateDetails = (value, key) => {
         setDetails((prev) => { return { ...prev, [key]: value } });
     }
-
+ 
     console.log(details);
 
     return (

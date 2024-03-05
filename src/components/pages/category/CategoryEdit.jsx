@@ -17,7 +17,7 @@ const CategoryEdit = () => {
       })
   }, [id])
     const updateCategory = (value, key) => {
-      setCategorydetails((prev) => { return { ...prev, [key]: value } });
+      setCategorydetails((prev) => { return { ...prev, [key]: value } }); 
   }
     return (
         <div className='w-[calc(100%_-_200px)] p-3'>
