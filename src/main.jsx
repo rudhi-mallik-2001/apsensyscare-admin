@@ -17,6 +17,7 @@ const router = createBrowserRouter(
       <Route path='products/edit/:id' element={<ProductEdit />} />
       <Route path='category/edit/:id' element={<CategoryEdit />} />
       <Route path='add-category' element={<Addcategorycont />} />
+      <Route path='add-product' element={<Addcategorycont />} />
     </Route>
   )
 )
