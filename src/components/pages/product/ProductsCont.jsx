@@ -14,7 +14,7 @@ const ProductsCont = () => {
     handelFilter(id)
   },[id])
   return (
-    <div className='w-[calc(100%_-_200px)] flex flex-row gap-2 p-3'>
+    <div className='w-full flex flex-row gap-2 px-3'>
       <ProductFilter handelFilter={handelFilter} filterItem={filterItem} />
 
       <Products filterItem={filterItem} />
