@@ -5,6 +5,7 @@ import { toast } from 'react-toastify'
 function ProductDetailsEdit({ product, updateDetails }) {
     // console.log(product);
     const [selectedImage, setSelectedImage] = useState(null);
+    const [uploadedImage, SetuploadedImage] = useState('');
     const handelInputs = (value, key) => {
         updateDetails(value, key)
     }
@@ -27,7 +28,10 @@ function ProductDetailsEdit({ product, updateDetails }) {
         const formdata = new FormData();
         formdata.append('fileToUpload', selectedImage);
         uploadImage(formdata).then((res) => {
-            console.log(res);
+            if (res.status === 'success') {
+                console.log('hello')
+                SetuploadedImage(res.name)
+            }
         })
     }
     return (
@@ -103,18 +107,30 @@ function ProductDetailsEdit({ product, updateDetails }) {
             </div>
             <div className='w-full  flex flex-col justify-start items-start gap-2 p-6'>
                 <div className='border-2 rounded-md'>
-                    <img src={`https://apsensyscare.com/Image/all_products/${product.product_image}`} alt="" srcset="" />
+                    <img src={`https://apsensyscare.com/Image/all_products/${product.product_image}`} alt="" srcSet="" />
                 </div>
-                <form enctype="multipart/form-data" onSubmit={handleUpload}>
+                <div className="w-full">
+                    <label className="form-control w-full max-w-md">
+                        <input type="text" placeholder="No Image selected" className="input input-bordered w-full max-w-md" value={uploadedImage} readOnly />
+                    </label>
+                </div>
+                <form encType="multipart/form-data" onSubmit={handleUpload} className="w-full">
                     <input
                         type="file"
-                        className="file-input file-input-bordered w-full max-w-xs"
+                        className="file-input file-input-bordered w-full max-w-md"
                         placeholder="Daisy"
                         accept="image/*"
                         onChange={handleImageChange}
                         name="fileToUpload"
+                    /><input
+                        type="text"
+                        className="hidden"
+                        placeholder="Daisy"
+                        accept="image/*"
+                        value={''}
+                        name="fileToUpload"
                     />
-                    <button type='butt' class="w-[30%] border flex flex-row justify-around cursor-pointer rounded-md hover:bg-[#ffb356] hover:text-[#fff] py-1" >Upload</button>
+                    <button type='submit' className="w-[30%] border flex flex-row justify-around cursor-pointer rounded-md hover:bg-[#ffb356] hover:text-[#fff] py-1 mt-2" >Upload</button>
                 </form>
             </div>
         </div>

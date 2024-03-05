@@ -32,6 +32,7 @@ export const updateCategoryById = async (details) => {
 export const fetchCategoryById = async (id) => {
     return await axios
         .post("http://apsensyscare.com/backend_api/categorydetailsbyid",id)
+        .then((response) => response.data.categorydetails)
 };
 export const uploadImage = async (data) => {
     return await axios
