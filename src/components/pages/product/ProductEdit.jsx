@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Input, ProductDetailsEdit, fetchProductdetailsById } from "../../index"
 const ProductEdit = () => {
     const { id } = useParams();
@@ -11,7 +11,7 @@ const ProductEdit = () => {
         setClicktab(ref)
     }
     useEffect(() => {
-        fetchProductdetailsById(id).then((res) => { 
+        fetchProductdetailsById(id).then((res) => {
             console.log('called')
             setDetails(res[0]);
         })
@@ -20,12 +20,14 @@ const ProductEdit = () => {
     const updateDetails = (value, key) => {
         setDetails((prev) => { return { ...prev, [key]: value } });
     }
- 
+
     console.log(details);
 
     return (
-        <div className='w-[calc(100%_-_200px)] p-3'>
-
+        <div className='w-[calc(100vw_-_200px)] flex flex-col justify-start px-3'>
+            <div className='w-[100%] border rounded-md p-2 flex justify-end  gap-y-2 mb-2'>
+                <Link class="w-[10%] border flex flex-row justify-around cursor-pointer rounded-md hover:bg-[#ffb356] hover:text-[#fff] py-1" to={'/add-category'}>Add Categories</Link>
+            </div>
             <div className='w-full flex flex-col justify-start' action="" method="post">
                 <div role="tablist" className="tabs tabs-lifted " >
                     {/* <input ref={ref} type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Image"

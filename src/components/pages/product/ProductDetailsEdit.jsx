@@ -14,8 +14,8 @@ function ProductDetailsEdit({ product, updateDetails }) {
     }
     
     return (
-        <div className='w-[100%] p-2 flex flex-row  gap-2 border rounded-md'>
-            <div className='w-[100%]'>
+        <div className='w-[100%] p-2 flex flex-row  gap-2 '>
+            <div className='w-[100%] flex flex-col  gap-2'>
                 <Input
                     label="Brand Name*"
                     placeholder="Enter Your Product"

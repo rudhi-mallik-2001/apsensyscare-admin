@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const SideBar = () => {
     return (
-        <div className='w-[200px] min-h-[calc(100vh_-_66px)] flex flex-col bg-[#dedede] border-r-2 p-2 pl-[24px] gap-2 font-medium'>
+        <div className='w-[200px] flex flex-col bg-[#dedede] border-r-2 p-2 pl-[24px] gap-2 font-medium'>
             <Link to="/" className='w-full flex flex-row justify-start items-center gap-2 cursor-pointer'>
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#747475" className="bi bi-microsoft" viewBox="0 0 16 16">
