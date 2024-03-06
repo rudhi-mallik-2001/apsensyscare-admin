@@ -8,12 +8,11 @@ const Layout = () => {
     return (
         <>
             <ToastContainer position="top-left" />
-            <div className='w-full flex flex-col justify-content-between '>
+            <div className='w-full flex flex-col justify-content-between bg-[#fff]'>
                 <UpperBar />
-                <div className='w-full max-h-[calc(100vh_-_66px)] flex justify-content-between text-[#747475] '>
+                <div className='w-full max-h-[calc(100vh_-_80px)] h-[calc(100vh_-_80px)] flex justify-content-between text-[#747475] '>
                     <SideBar />
-                    <div className='w-full max-h-[calc(100vh_-_66px)] flex justify-center items-start text-[#747475] overflow-y-scroll bg-[#fff]'>
-                        
+                    <div className='w-full max-h-[calc(100vh_-_80px)] h-[calc(100vh_-_80px)] flex justify-center items-start text-[#747475] overflow-y-scroll bg-[#fff]'>
                         <Outlet />
                     </div>
                 </div>

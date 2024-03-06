@@ -20,7 +20,7 @@ const CategoryEdit = () => {
       setCategorydetails((prev) => { return { ...prev, [key]: value } }); 
   }
     return (
-        <div className='w-[calc(100%_-_200px)] p-3'>
+        <div className='w-full p-3'>
 
             <div className='w-full flex flex-col justify-start' action="" method="post">
                 <div role="tablist" className="tabs tabs-lifted " >

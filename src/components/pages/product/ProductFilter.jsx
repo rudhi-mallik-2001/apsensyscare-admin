@@ -16,7 +16,7 @@ const ProductFilter = ({ handelFilter, filterItem = null }) => {
     }
     console.log(filterItem)
     return (
-        <div className='w-[200px] h-[calc(100vh_-_64px)] bg-white border px-2 rounded-md gap-2  '>
+        <div className='w-[200px] h-[calc(100vh_-_70px)] bg-white border px-2 rounded-md gap-2  '>
             <div
                 onClick={() => { changeFilter() }}
                 className={`w-full p-1 cursor-pointer ${filterItem===null?'bg-slate-300 text-[#fff]':''} hover:bg-slate-300 hover:text-[#fff] my-1 rounded-md`}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Input, updateCategoryById } from '../../index'
+import { Input, updateCategoryById,Image } from '../../index'
 import { toast } from 'react-toastify'
 
 function CategoryDetailsEdit({ category, updateCategory }) {

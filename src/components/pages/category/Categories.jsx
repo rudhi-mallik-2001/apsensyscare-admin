@@ -12,11 +12,11 @@ const Categories = () => {
   }, [])
   return (
 
-    <div className='w-full flex-col  justify-start items-start p-3 gap-2'>
-      <div className='w-[100%] flex justify-end gap-y-2 mb-2'>
-      <Link class="w-[10%] border flex flex-row justify-around cursor-pointer rounded-md hover:bg-[#ffb356] hover:text-[#fff] py-1" to={'/add-category'}>Add Categories</Link>
+    <div className='w-full flex-col  justify-start items-start px-3 gap-2'>
+      <div className='w-[100%] border rounded-md p-2 flex justify-end  gap-y-2 mb-2'>
+        <Link class="w-[10%] border flex flex-row justify-around cursor-pointer rounded-md hover:bg-[#ffb356] hover:text-[#fff] py-1" to={'/add-category'}>Add Categories</Link>
       </div>
-     
+
       <div className='w-full flex flex-row gap-4 justify-between'>
         {
           categories.map((item, idx) => {
