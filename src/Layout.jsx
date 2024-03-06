@@ -12,7 +12,7 @@ const Layout = () => {
                 <UpperBar />
                 <div className='w-full max-h-[calc(100vh_-_66px)] flex justify-content-between text-[#747475] '>
                     <SideBar />
-                    <div className='w-full max-h-[calc(100vh_-_66px)] flex justify-content-between text-[#747475] overflow-y-scroll bg-[#fff]'>
+                    <div className='w-full max-h-[calc(100vh_-_66px)] flex justify-center items-start text-[#747475] overflow-y-scroll bg-[#fff]'>
                         
                         <Outlet />
                     </div>
