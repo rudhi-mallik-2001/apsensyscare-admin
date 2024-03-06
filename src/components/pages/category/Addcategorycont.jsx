@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { Input,Addcategory } from '../../index'
+import { Input,Addcategory, Image } from '../../index'
 import { toast } from 'react-toastify'
 function Addcategorycont() {
     const keys={
@@ -26,7 +26,7 @@ function Addcategorycont() {
         console.log("Submitted:", addcategory);
     };
   return (
-    <div className='w-[100%] p-2 flex flex-row  gap-2  rounded-md'>
+    <div className='w-[98%] p-2 flex flex-row  gap-2 border rounded-md'>
          <div className='w-[50%]'>
                 <Input
                     label="Category Name*"
@@ -89,11 +89,7 @@ function Addcategorycont() {
                 <div className='border-2 rounded-md'>
                     <img src="https://apsensyscare.com/Image/all_products/stainpro-lemon-dish-wash-gel.png" alt="" srcset="" />
                 </div>
-                <input type="text" placeholder="Enter url" className="input w-full max-w-xs" />
-                <div>
-                    <input type="file" className="file-input file-input-bordered w-full max-w-xs" placeholder="Daisy" />
-                </div>
-                <a className="w-[30%] border flex flex-row justify-around cursor-pointer rounded-md hover:bg-[#ffb356] hover:text-[#fff] py-1" href="/products/1">Upload</a>
+                <Image />
             </div>
     </div>
   )
