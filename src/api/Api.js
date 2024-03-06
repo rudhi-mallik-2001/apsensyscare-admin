@@ -26,7 +26,7 @@ export const updateProductsById = async (details) => {
 };  
 export const updateCategoryById = async (details) => {
     return await axios
-        .post("http://apsensyscare.com/backend_api/updateCategory",details)
+        .post("http://apsensyscare.com/backend_api/updateCategory",details) 
         .then((response) => response.data)
 };
 export const fetchCategoryById = async (id) => {
