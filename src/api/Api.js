@@ -45,3 +45,8 @@ export const uploadImage = async (data) => {
         .post("http://apsensyscare.com/backend_api/i-upload",data,)
         .then((response) => response.data)
 };
+export const getProductSizes = async (id) => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/productsizes",id)
+        .then((response) => response.data.productsizes)
+};

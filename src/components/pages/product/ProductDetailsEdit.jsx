@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { Input, updateProductsById, uploadImage,Image } from '../../index'
+import React, { useEffect, useState } from 'react'
+import { Input, updateProductsById, Image, getProductSizes, fetchAllCategory } from '../../index'
 import { toast } from 'react-toastify'
 
 function ProductDetailsEdit({ product, updateDetails }) {
-    
+    const [categories, setCategory] = useState([])
     const handelInputs = (value, key) => {
         updateDetails(value, key)
     }
@@ -12,7 +12,15 @@ function ProductDetailsEdit({ product, updateDetails }) {
             toast("Update success");
         })
     }
-    
+    useEffect(() => {
+        // getProductSizes(product.id).then(()=>{
+
+        // })
+        fetchAllCategory().then((res) => {
+            setCategory(res)
+        })
+    }, [])
+    const id = product.id;
     return (
         <div className='w-[100%] p-2 flex flex-row  gap-2 '>
             <div className='w-[100%] flex flex-col  gap-2'>
@@ -30,6 +38,26 @@ function ProductDetailsEdit({ product, updateDetails }) {
                 value={product.category_id}
                 onChange={(e)=>handelInputs(e.target.value,'brand_name')}
             /> */}
+                <label className="form-control w-full ">
+                    <div className="label">
+                        <span className="label-text">Select Category</span>
+                    </div>
+                    <select className="select  select-md rounded-md border border-black/30 px-3 py-2" onChange={(e) => handelInputs(e.target.value, 'category_id')}>
+                        {
+                            categories.map((item) => {
+                                if (product.category_id === item.category_id) {
+                                    return (
+                                        <option value={item.id} selected>{item.category_name}</option>
+                                    )
+                                }else{
+                                    return (
+                                        <option value={item.id} >{item.category_name}</option>
+                                    )
+                                }
+                            })
+                        }
+                    </select>
+                </label>
                 <Input
                     label="Product Name*"
                     placeholder="Enter Name of Product"
@@ -67,6 +95,13 @@ function ProductDetailsEdit({ product, updateDetails }) {
                     onChange={(e) => handelInputs(e.target.value, 'default_price')}
                 />
                 <Input
+                    label="Product Default Size*"
+                    placeholder="Enter size of your Product "
+                    type="text"
+                    value={product.default_size}
+                    onChange={(e) => handelInputs(e.target.value, 'default_price')}
+                />
+                <Input
                     label="Product Description*"
                     placeholder="Enter description of your Product "
                     type="text"
@@ -80,6 +115,13 @@ function ProductDetailsEdit({ product, updateDetails }) {
                     value={product.long_description}
                     onChange={(e) => handelInputs(e.target.value, 'long_description')}
                 />
+                <Input
+                    label="Product Image*"
+                    placeholder="Enter Image Name "
+                    type="text"
+                    value={product.product_image}
+                    onChange={(e) => handelInputs(e.target.value, 'long_description')}
+                />
                 <div className='w-full h-[50px] flex  items-center'>
                     <button type='button' className="btn btn-sm btn-success" onClick={() => updateproduct(product)}>Upload</button>
                 </div>
@@ -88,8 +130,8 @@ function ProductDetailsEdit({ product, updateDetails }) {
                 <div className='border-2 rounded-md'>
                     <img src={`https://apsensyscare.com/Image/all_products/${product.product_image}`} alt="" srcSet="" />
                 </div>
-                
-                <Image/>
+
+                <Image />
             </div>
         </div>
     )
