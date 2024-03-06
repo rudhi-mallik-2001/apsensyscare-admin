@@ -7,7 +7,7 @@ const ProductEdit = () => {
     const ref = useRef()
     const [clicktab, setClicktab] = useState('2');
     const [details, setDetails] = useState({});
-    const handelclick = (ref) => {
+    const handelclick = (ref) => { 
         setClicktab(ref)
     }
     useEffect(() => {

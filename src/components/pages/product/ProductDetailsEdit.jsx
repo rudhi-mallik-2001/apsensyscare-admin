@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import { Input, updateProductsById, Image, getProductSizes, fetchAllCategory } from '../../index'
+import { Input, updateProductsById, Image, getProductSizes, fetchAllCategory, fetchSize } from '../../index'
 import { toast } from 'react-toastify'
 
 function ProductDetailsEdit({ product, updateDetails }) {
     const [categories, setCategory] = useState([])
+    const [productsize, setProductsize] = useState([])
+    const [deafultprice, setDeafultprice] = useState(null)
+
     const handelInputs = (value, key) => {
+        console.log("entered")
         updateDetails(value, key)
     }
     const updateproduct = (value) => {
         updateProductsById(value).then((res) => {
-            toast("Update success");
+            toast.success("Update success");
         })
     }
     useEffect(() => {
@@ -19,8 +23,17 @@ function ProductDetailsEdit({ product, updateDetails }) {
         fetchAllCategory().then((res) => {
             setCategory(res)
         })
-    }, [])
-    const id = product.id;
+        getProductSizes(product.id).then((res) => {
+            setProductsize(res)
+        })
+        setDeafultprice(product.default_price)
+    }, [product.id])
+    const hanelPrice = (str, pid) => {
+        const temparr = str.split('@@@')
+        handelInputs(temparr[1], 'default_size')
+        setDeafultprice(temparr[2])
+        handelInputs(temparr[2], 'default_price')
+    }
     return (
         <div className='w-[100%] p-2 flex flex-row  gap-2 '>
             <div className='w-[100%] flex flex-col  gap-2'>
@@ -38,6 +51,7 @@ function ProductDetailsEdit({ product, updateDetails }) {
                 value={product.category_id}
                 onChange={(e)=>handelInputs(e.target.value,'brand_name')}
             /> */}
+
                 <label className="form-control w-full ">
                     <div className="label">
                         <span className="label-text">Select Category</span>
@@ -45,11 +59,11 @@ function ProductDetailsEdit({ product, updateDetails }) {
                     <select className="select  select-md rounded-md border border-black/30 px-3 py-2" onChange={(e) => handelInputs(e.target.value, 'category_id')}>
                         {
                             categories.map((item) => {
-                                if (product.category_id === item.category_id) {
+                                if (product.category_id === item.id) {
                                     return (
                                         <option value={item.id} selected>{item.category_name}</option>
                                     )
-                                }else{
+                                } else {
                                     return (
                                         <option value={item.id} >{item.category_name}</option>
                                     )
@@ -91,16 +105,36 @@ function ProductDetailsEdit({ product, updateDetails }) {
                     label="Product Default Price*"
                     placeholder="Enter price of your Product "
                     type="text"
-                    value={product.default_price}
-                    onChange={(e) => handelInputs(e.target.value, 'default_price')}
+                    value={deafultprice === null ? product.default_price + ".00" : deafultprice + ".00"}
+                // onChange={(e) => handelInputs(e.target.value, 'default_price')}
                 />
-                <Input
+                {/* <Input
                     label="Product Default Size*"
                     placeholder="Enter size of your Product "
                     type="text"
                     value={product.default_size}
-                    onChange={(e) => handelInputs(e.target.value, 'default_price')}
-                />
+                    onChange={(e) => handelInputs(e.target.value, 'default_size')}
+                /> */}
+                <label className="form-control w-full ">
+                    <div className="label">
+                        <span className="label-text">Select Size</span>
+                    </div>
+                    <select className="select  select-md rounded-md border border-black/30 px-3 py-2" onChange={(e) => hanelPrice(e.target.value, product.id)}>
+                        {
+                            productsize.map((item) => {
+                                if (product.default_size === item.size_value) {
+                                    return (
+                                        <option value={item.id + "@@@" + item.size_value+"@@@"+item.price} selected>{item.size_value >= 1000 ? item.size_value / 1000 + "L" : item.size_value + "ML"} </option>
+                                    )
+                                } else {
+                                    return (
+                                        <option value={item.id + "@@@" + item.size_value+"@@@"+item.price} >{item.size_value >= 1000 ? item.size_value / 1000 + "L" : item.size_value + "ML"}</option>
+                                    )
+                                }
+                            })
+                        }
+                    </select>
+                </label>
                 <Input
                     label="Product Description*"
                     placeholder="Enter description of your Product "
@@ -123,7 +157,7 @@ function ProductDetailsEdit({ product, updateDetails }) {
                     onChange={(e) => handelInputs(e.target.value, 'long_description')}
                 />
                 <div className='w-full h-[50px] flex  items-center'>
-                    <button type='button' className="btn btn-sm btn-success" onClick={() => updateproduct(product)}>Upload</button>
+                    <button type='button' className="btn btn-sm btn-success" onClick={() => updateproduct(product)}>Update</button>
                 </div>
             </div>
             <div className='w-full  flex flex-col justify-start items-start gap-2 p-6'>

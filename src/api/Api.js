@@ -50,3 +50,9 @@ export const getProductSizes = async (id) => {
         .post("http://apsensyscare.com/backend_api/productsizes",id)
         .then((response) => response.data.productsizes)
 };
+export const fetchSize = async () => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/size")
+        .then((response) => response.data.size)
+};
+
