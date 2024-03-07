@@ -7,7 +7,7 @@ function ProductDetailsEdit({ product, updateDetails }) {
     const [productsize, setProductsize] = useState([])
     const [deafultprice, setDeafultprice] = useState(null)
 
-    const handelInputs = (value, key) => {
+    const handelInputs = (value, key) => { 
         console.log("entered")
         updateDetails(value, key)
     }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Input, fetchSize } from '../../index'
+import { Input, fetchSize,addvarity } from '../../index'
 
 function Addproductvarities({ product }) {
     const varities = {
@@ -10,11 +10,14 @@ function Addproductvarities({ product }) {
     const [addvarities, setAddvarities] = useState(varities)
     const [size, setSize] = useState([])
     const handleVarities = (val, key) => {
+        console.log("entered")
         setAddvarities((prev) => ({ ...prev, [key]: val }))
     }
     const Varityclick = () => {
+        addvarity(addvarities)
         console.log("submitted", addvarities);
     }
+    
     useEffect(() => {
         fetchSize().then((res) => {
             console.log('called')

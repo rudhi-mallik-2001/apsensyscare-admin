@@ -42,7 +42,7 @@ export const Addcategory = async (category) => {
 
 export const uploadImage = async (data) => {
     return await axios
-        .post("http://apsensyscare.com/backend_api/i-upload",data,)
+        .post("http://apsensyscare.com/backend_api/i-upload",data)
         .then((response) => response.data)
 };
 export const getProductSizes = async (id) => {
@@ -54,5 +54,15 @@ export const fetchSize = async () => {
     return await axios
         .post("http://apsensyscare.com/backend_api/size")
         .then((response) => response.data.size)
+};
+export const addvarity = async (data) => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/addproductvarities",data)
+        .then((response) => response.data)
+};
+export const imagMagnifing = async (data) => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/magnifying",data)
+        .then((response) => response.data.images)
 };
  

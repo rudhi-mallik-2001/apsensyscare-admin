@@ -62,7 +62,7 @@ const ProductEdit = () => {
                     <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box rounded-b-[0px] ">
                         <div className='w-full  flex flex-col justify-start items-start gap-2 p-6'>
                             
-                            <Varitysizingimage varity={details} /> 
+                            <Varitysizingimage  /> 
                         </div>
                     </div>
                     <input type="radio" name="my_tabs_2" role="tab" className="tab !w-max" aria-label="Magnifying Images"
