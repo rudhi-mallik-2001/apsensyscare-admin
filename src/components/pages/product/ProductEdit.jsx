@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { Input, ProductDetailsEdit, fetchProductdetailsById } from "../../index"
+import {  ProductDetailsEdit, fetchProductdetailsById } from "../../index"
 import Magnifingimage from './Magnifingimage';
 import Varitysizingimage from './Varitysizingimage';
 const ProductEdit = () => {
@@ -14,7 +14,6 @@ const ProductEdit = () => {
     } 
     useEffect(() => {
         fetchProductdetailsById(id).then((res) => {
-            console.log('called')
             setDetails(res[0]);
         })
     }, [id])
@@ -23,7 +22,6 @@ const ProductEdit = () => {
         setDetails((prev) => { return { ...prev, [key]: value } });
     }
 
-    console.log(details);
 
     return (
         <div className='w-[calc(100vw_-_200px)] flex flex-col justify-start px-3'>
@@ -32,19 +30,7 @@ const ProductEdit = () => {
             </div>
             <div className='w-full flex flex-col justify-start' action="" method="post">
                 <div role="tablist" className="tabs tabs-lifted " >
-                    {/* <input ref={ref} type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Image"
-                        readOnly checked={clicktab === '1' ? true : false}
-                        onClick={() => handelclick('1')} />
-                    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box rounded-b-[0px] ">
-                        <div className='w-full  flex flex-col justify-start items-start gap-2 p-6'>
-                            <div className='border-2 rounded-md'>
-                                <img src={`https://apsensyscare.com/Image/all_products/${details.product_image}`} alt="" srcset="" />
-                            </div>
-                            <div>
-                                <input type="file" className="file-input file-input-bordered w-full max-w-xs" placeholder="Daisy" />
-                            </div>
-                        </div>
-                    </div> */}
+                   
 
                     <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Details"
                         readOnly
@@ -61,7 +47,6 @@ const ProductEdit = () => {
                         onClick={() => handelclick('3')} />
                     <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box rounded-b-[0px] ">
                         <div className='w-full  flex flex-col justify-start items-start gap-2 p-6'>
-                            
                             <Varitysizingimage  /> 
                         </div>
                     </div>

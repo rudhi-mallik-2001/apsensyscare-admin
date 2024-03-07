@@ -44,13 +44,7 @@ function ProductDetailsEdit({ product, updateDetails }) {
                     value={product.brand_name}
                     onChange={(e) => handelInputs(e.target.value, 'brand_name')}
                 />
-                {/* <Input
-                label="Category Id*"
-                placeholder="Enter Category id"
-                type="text"
-                value={product.category_id}
-                onChange={(e)=>handelInputs(e.target.value,'brand_name')}
-            /> */}
+                
 
                 <label className="form-control w-full ">
                     <div className="label">
@@ -108,13 +102,7 @@ function ProductDetailsEdit({ product, updateDetails }) {
                     value={deafultprice === null ? product.default_price + ".00" : deafultprice + ".00"}
                 // onChange={(e) => handelInputs(e.target.value, 'default_price')}
                 />
-                {/* <Input
-                    label="Product Default Size*"
-                    placeholder="Enter size of your Product "
-                    type="text"
-                    value={product.default_size}
-                    onChange={(e) => handelInputs(e.target.value, 'default_size')}
-                /> */}
+                
                 <label className="form-control w-full ">
                     <div className="label">
                         <span className="label-text">Select Size</span>

@@ -65,4 +65,9 @@ export const imagMagnifing = async (data) => {
         .post("http://apsensyscare.com/backend_api/magnifying",data)
         .then((response) => response.data.images)
 };
+export const deleteproductvarity = async (data) => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/deleteproductvarity",data)
+        .then((response) => response.data.images)
+};
  

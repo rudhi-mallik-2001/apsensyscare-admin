@@ -11,10 +11,10 @@ import Addproductvarities from './pages/product/Addproductvarities.jsx'
 import CategoryDetailsEdit from './pages/category/CategoryDetailsEdit.jsx'
 import Addcategorycont from './pages/category/CategoryDetailsEdit.jsx'
 
-import { fetchProducts, fetchAllProducts, fetchAllCategory,fetchProductdetailsById,updateProductsById,updateCategoryById,fetchCategoryById,Addcategory,uploadImage,getProductSizes,fetchSize,addvarity,imagMagnifing} from '../api/Api'
+import { fetchProducts, fetchAllProducts, fetchAllCategory,fetchProductdetailsById,updateProductsById,updateCategoryById,fetchCategoryById,Addcategory,uploadImage,getProductSizes,fetchSize,addvarity,imagMagnifing,deleteproductvarity} from '../api/Api'
 
 
 
  
-export { UpperBar, SideBar, ProductsCont, Categories, ProductEdit,CategoryEdit, fetchProducts, fetchAllProducts, fetchAllCategory,fetchProductdetailsById,Input,ProductDetailsEdit,updateProductsById,CategoryDetailsEdit,updateCategoryById,fetchCategoryById,uploadImage,Addcategory,Addcategorycont,Image,getProductSizes,fetchSize,Addproductvarities,addvarity,imagMagnifing}  
+export { UpperBar, SideBar, ProductsCont, Categories, ProductEdit,CategoryEdit, fetchProducts, fetchAllProducts, fetchAllCategory,fetchProductdetailsById,Input,ProductDetailsEdit,updateProductsById,CategoryDetailsEdit,updateCategoryById,fetchCategoryById,uploadImage,Addcategory,Addcategorycont,Image,getProductSizes,fetchSize,Addproductvarities,addvarity,imagMagnifing,deleteproductvarity}  
   
