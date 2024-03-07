@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Input, ProductDetailsEdit, fetchProductdetailsById } from "../../index"
+import Magnifingimage from './Magnifingimage';
+import Varitysizingimage from './Varitysizingimage';
 const ProductEdit = () => {
     const { id } = useParams();
     // console.log(id);
@@ -9,7 +11,7 @@ const ProductEdit = () => {
     const [details, setDetails] = useState({});
     const handelclick = (ref) => { 
         setClicktab(ref)
-    }
+    } 
     useEffect(() => {
         fetchProductdetailsById(id).then((res) => {
             console.log('called')
@@ -58,14 +60,19 @@ const ProductEdit = () => {
                         readOnly checked={clicktab === '3' ? true : false}
                         onClick={() => handelclick('3')} />
                     <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box rounded-b-[0px] ">
-                        <div className='w-full  flex flex-col justify-start items-start gap-2 p-6'>Size</div>
+                        <div className='w-full  flex flex-col justify-start items-start gap-2 p-6'>
+                            
+                            <Varitysizingimage varity={details} /> 
+                        </div>
                     </div>
                     <input type="radio" name="my_tabs_2" role="tab" className="tab !w-max" aria-label="Magnifying Images"
                         readOnly
                         checked={clicktab === '4' ? true : false}
                         onClick={() => handelclick('4')}
                     />
-                    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box rounded-b-[0px] p-6">Tab content 3</div>
+                    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box rounded-b-[0px] p-6">
+                        <Magnifingimage />
+                    </div>
 
                 </div>
                 <div className='flex flex-row justify-between bg-[#d9d9d9] px-6 py-3 rounded-b-[10px]'>

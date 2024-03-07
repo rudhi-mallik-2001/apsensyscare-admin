@@ -55,4 +55,4 @@ export const fetchSize = async () => {
         .post("http://apsensyscare.com/backend_api/size")
         .then((response) => response.data.size)
 };
-
+ 
