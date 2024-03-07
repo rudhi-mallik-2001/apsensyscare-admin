@@ -45,7 +45,7 @@ function Addproductvarities({ product }) {
 
                 <h2><strong>Select Size</strong></h2>
 
-                <select className="select  select-md rounded-md border border-black/30" onChange={(e) => handelInputs(e.target.value, 'category_id')}>
+                <select className="select  select-md rounded-md border border-black/30" onChange={(e) => handleVarities(e.target.value, 'size_id')}>
                     <option disabled selected>Select Sizes</option>
                     {
                         size.map((item) => {
@@ -56,6 +56,7 @@ function Addproductvarities({ product }) {
                     }
                 </select>
             </label>
+         
             <div className="w-[20%] relative">
                 <h2><strong>Stock</strong></h2>
                 <Input
