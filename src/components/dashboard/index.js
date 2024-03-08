@@ -1,5 +1,5 @@
 import Menu from './Menu.jsx'
 import DashLeftCont from './DashLeftCont'
 import DashRightCont from './DashRightCont'
-
-export {Menu,DashLeftCont,DashRightCont}
+import {fetchpendingOrder} from '../../api/Api.js'
+export {Menu,DashLeftCont,DashRightCont,fetchpendingOrder}
