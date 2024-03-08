@@ -24,19 +24,7 @@ const CategoryEdit = () => {
 
             <div className='w-full flex flex-col justify-start' action="" method="post">
                 <div role="tablist" className="tabs tabs-lifted " >
-                    {/* <input ref={ref} type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Image"
-                        readOnly checked={clicktab === '1' ? true : false}
-                        onClick={() => handelclick('1')} />
-                    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box rounded-b-[0px] ">
-                        <div className='w-full  flex flex-col justify-start items-start gap-2 p-6'>
-                            <div className='border-2 rounded-md'>
-                                <img src={`https://apsensyscare.com/Image/all_products/${details.product_image}`} alt="" srcset="" />
-                            </div>
-                            <div>
-                                <input type="file" className="file-input file-input-bordered w-full max-w-xs" placeholder="Daisy" />
-                            </div>
-                        </div>
-                    </div> */}
+                    
 
                     <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="category Details"
                         readOnly

@@ -153,7 +153,7 @@ function ProductDetailsEdit({ product, updateDetails }) {
                     <img src={`https://apsensyscare.com/Image/all_products/${product.product_image}`} alt="" srcSet="" />
                 </div>
 
-                <Image />
+                <Image folder="all_products"/>
             </div>
         </div>
     )

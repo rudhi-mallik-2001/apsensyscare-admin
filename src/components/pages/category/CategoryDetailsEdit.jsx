@@ -89,7 +89,7 @@ function CategoryDetailsEdit({ category, updateCategory }) {
                 <div className='border-2 rounded-md'>
                     <img src="https://apsensyscare.com/Image/all_products/stainpro-lemon-dish-wash-gel.png" alt="" srcset="" />
                 </div>
-                <Image/>
+                <Image folder="category"/>
             </div>
         </div>
     )

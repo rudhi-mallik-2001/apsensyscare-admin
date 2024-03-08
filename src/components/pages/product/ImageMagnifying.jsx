@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import Image from '../../../others/Image';
 
-function ImageMagnifying({ image = '' ,path=''}) {
+function ImageMagnifying({ image = '', path = '' }) {
     const [magimage, setMagimage] = useState([])
     const imagesArray = image.split('@@@');
     useEffect(() => {
@@ -27,8 +28,10 @@ function ImageMagnifying({ image = '' ,path=''}) {
                 }
 
             </div>
+            <div>
 
-            <button type="submit" class="w-[15%] border flex flex-row justify-around cursor-pointer rounded-md hover:bg-[#ffb356] hover:text-[#fff] py-1 mt-2">Upload</button>
+                <Image folder={`all_products/${path}`}/>
+            </div>
         </div>
     )
 }
