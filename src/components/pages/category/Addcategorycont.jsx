@@ -1,97 +1,56 @@
-import React,{useState} from 'react'
-import { Input,Addcategory, Image } from '../../index'
-import { toast } from 'react-toastify'
+import React,{useRef, useState} from 'react'
+import { Link, useParams } from 'react-router-dom'
+import AddCategoryDetailsEdit from './AddCategoryDetailsEdit';
+
 function Addcategorycont() {
-    const keys={
-        category_name:"",
-        category_url:"",
-        category_img:"",
-        category_title:"",
-        category_des:"",
-        topsellers:"",
-        topsellers_desc:"",
-        top_product:"",
-        
-    }
-    const [addcategory, setAddcategory] = useState(keys)
-    const handleclick=(values,key)=>{
-        // console.log("Added");
-        setAddcategory((prev)=>({...prev,[key]:values}))
-    }
-    const handleSubmit = () => {
-        Addcategory(addcategory).then((res)=>{
-            console.log(res);
-            toast("Insert success");
-        })
-        console.log("Submitted:", addcategory);
-    };
+    const { id } = useParams();
+    const ref = useRef()
+    const [categoryclick, setCategoryclick] = useState('2');
+    const handelclick = (ref) => { 
+        setCategoryclick(ref)
+    } 
   return (
-    <div className='w-[98%] p-2 flex flex-row  gap-2 border rounded-md'>
-         <div className='w-[50%]'>
-                <Input
-                    label="Category Name*"
-                    placeholder="Enter Your Product"
-                    type="text"
-                    onChange={(e) => handleclick(e.target.value, 'category_name')}
-
-                />
-                <Input
-                    label="category url*"
-                    placeholder="Enter category url"
-                    type="text"
-                    onChange={(e) => handleclick(e.target.value, 'category_url')}
-                    />
-
-                <Input
-                    label="category title*"
-                    placeholder="Enter category title"
-                    type="text"
-                    onChange={(e) => handleclick(e.target.value, 'category_title')}            
-
-                />
-              
-                <Input
-                    label="category image*"
-                    placeholder="Enter category image"
-                    type="text"
-                    onChange={(e) => handleclick(e.target.value, 'category_img')}
-                />
-                <Input
-                    label="top seller*"
-                    placeholder="Enter topsellers"
-                    type="text"
-                    onChange={(e) => handleclick(e.target.value, 'topsellers')}
-                />
-                  <Input
-                    label="Top Seller Description*"
-                    placeholder="Enter descripption"
-                    type="text"
-                    onChange={(e) => handleclick(e.target.value, 'topsellers_desc')}
-                />
-                <Input
-                    label="top product*"
-                    placeholder="Enter topproduct"
-                    type="text"
-                    onChange={(e) => handleclick(e.target.value, 'top_product')}
-                />
-                <Input
-                    label="category description*"
-                    placeholder="Enter category description "
-                    type="text"
-                    onChange={(e) => handleclick(e.target.value, 'category_des')}
-                />
-
-                <div className='w-full h-[50px] flex  items-center'>
-                    <button type='button' className="btn btn-sm btn-success" onClick={handleSubmit}>Add Category </button>
-                </div>
-            </div>
-            <div className='w-full  flex flex-col  justify-start items-start gap-2 p-6'>
-                <div className='border-2 rounded-md'>
-                    <img src="https://apsensyscare.com/Image/all_products/stainpro-lemon-dish-wash-gel.png" alt="" srcset="" />
-                </div>
-                <Image />
-            </div>
+    <div className='w-[calc(100vw_-_200px)] flex flex-col justify-start px-3'>
+    <div className='w-[100%] border rounded-md p-2 flex justify-end  gap-y-2 mb-2'>
+        <Link class="w-[10%] border flex flex-row justify-around cursor-pointer rounded-md hover:bg-[#ffb356] hover:text-[#fff] py-1" to={'/add-category'}>Add Category</Link>
     </div>
+    <div className='w-full flex flex-col justify-start' action="" method="post">
+        <div role="tablist" className="tabs tabs-lifted " >
+           
+
+            <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Details"
+                readOnly
+                checked={categoryclick === '2' ? true : false}
+                onClick={() => handelclick('2')}
+            />
+            <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box rounded-b-[0px] p-6">
+                <div className='w-full flex flex-row flex-wrap justify-start items-start gap-2'>
+                    <AddCategoryDetailsEdit />
+                </div>
+            </div>
+            <input ref={ref} type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="varity and sizing"
+                readOnly checked={categoryclick === '3' ? true : false}
+                onClick={() => handelclick('3')} />
+            <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box rounded-b-[0px] ">
+                <div className='w-full  flex flex-col justify-start items-start gap-2 p-6'>
+                    {/* components */}
+                </div>
+            </div>
+            <input type="radio" name="my_tabs_2" role="tab" className="tab !w-max" aria-label="Magnifying Images"
+                readOnly
+                checked={categoryclick === '4' ? true : false}
+                onClick={() => handelclick('4')}
+            />
+            <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box rounded-b-[0px] p-6">
+                {/* components */}
+            </div>
+         </div>
+        <div className='flex flex-row justify-between bg-[#d9d9d9] px-6 py-3 rounded-b-[10px]'>
+            {/* <button className="btn btn-sm btn-success">Success</button> */}
+            <button className="btn btn-sm btn-error">Delete</button>
+        </div>
+    </div>
+</div>
   )
 }
 
