@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import {  ProductDetailsEdit, fetchProductdetailsById } from "../../index"
 import Magnifingimage from './Magnifingimage';
 import Varitysizingimage from './Varitysizingimage';
-import Addproductcont from './Addproductcont';
+// import Addproductcont from './Addproductcont';
 const ProductEdit = () => {
     const { id } = useParams();
     // console.log(id);
@@ -22,8 +22,8 @@ const ProductEdit = () => {
     const updateDetails = (value, key) => {
         setDetails((prev) => { return { ...prev, [key]: value } });
     }
-
-
+ 
+ 
     return (
         <div className='w-[calc(100vw_-_200px)] flex flex-col justify-start px-3'>
             <div className='w-[100%] border rounded-md p-2 flex justify-end  gap-y-2 mb-2'>

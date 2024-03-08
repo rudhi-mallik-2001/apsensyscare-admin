@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 
 function Addproductvarities({updatestatus}) {
     const { id } = useParams();
-    const varities = {
+    const varities = { 
         price: "",
         size_id: "",
         stock_qty: "",

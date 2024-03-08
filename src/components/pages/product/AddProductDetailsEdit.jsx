@@ -1,5 +1,5 @@
-import React,{useState} from 'react'
-import { Input, Image } from '../../index'
+import React, { useState, useEffect } from 'react'
+import { Input, Image, fetchAllCategory, fetchSize } from '../../index'
 
 export default function AddProductDetailsEdit() {
     const productkey = {
@@ -16,13 +16,30 @@ export default function AddProductDetailsEdit() {
         product_image: ""
     }
     const [addproduct, setAddproduct] = useState(productkey)
+    const [adddetails, setAdddetails] = useState([])
+    const [productsize, setproductsize] = useState([])
 
-    const handleProduct=(val,key)=>{
-        setAddproduct((prev)=>({...prev,[key]:val}))
+    const handleProduct = (val, key) => {
+        setAddproduct((prev) => ({ ...prev, [key]: val }))
     }
-    const productclick=()=>{
-        console.log("submitted",addproduct);
+    const productclick = () => {
+        console.log("submitted", addproduct);
     }
+    useEffect(() => {
+        // getProductSizes(product.id).then(()=>{
+
+        // })
+        fetchAllCategory().then((res) => {
+            setAdddetails(res)
+        })
+
+    }, [])
+    useEffect(() => {
+        fetchSize().then((res) => {
+            console.log('called')
+            setproductsize(res);
+        })
+    }, [])
     return (
         <div className='w-[98%] p-2 flex flex-row  gap-2 border rounded-md'>
             <div className='w-[50%]'>
@@ -30,70 +47,102 @@ export default function AddProductDetailsEdit() {
                     label="Enter the brand Name*"
                     placeholder="Enter Your Product"
                     type="text"
-                onChange={(e) => handleProduct(e.target.value, 'brand_name')}
+                    onChange={(e) => handleProduct(e.target.value, 'brand_name')}
 
                 />
+                <label className="form-control w-full ">
+                    <div className="label">
+                        <span className="label-text">Select Category</span>
+                    </div>
+                    <select className="select  select-md rounded-md border border-black/30 px-3 py-2" onChange={(e) => handleProduct(e.target.value, 'category_id')}>
+                        <option selected disabled>Select categories</option>
+                        {
+                            adddetails.map((item, idx) => {
+                                return (
+                                    <option value={item.id} key={idx}>{item.category_name}</option>
+                                )
+                            })
+                        }
+                    </select>
+                </label>
                 <Input
                     label="Enter the Name*"
                     placeholder="Enter Your Name"
                     type="text"
-                onChange={(e) => handleProduct(e.target.value, 'name')}
+                    onChange={(e) => handleProduct(e.target.value, 'name')}
 
                 />
                 <Input
                     label="Enter the short Name*"
                     placeholder="Enter short Name Product"
                     type="text"
-                onChange={(e) => handleProduct(e.target.value, 'short_name')}
+                    onChange={(e) => handleProduct(e.target.value, 'short_name')}
 
                 />
                 <Input
                     label="Enter the search keyword*"
                     placeholder="Enter search keyword of Product"
                     type="text"
-                onChange={(e) => handleProduct(e.target.value, 'search_keywords')}
+                    onChange={(e) => handleProduct(e.target.value, 'search_keywords')}
 
                 />
                 <Input
                     label="Enter  url*"
                     placeholder="Enter product url"
                     type="text"
-                onChange={(e) => handleProduct(e.target.value, 'product_url')}
+                    onChange={(e) => handleProduct(e.target.value, 'product_url')}
                 />
 
                 <Input
                     label="Enter default price*"
                     placeholder="Enter price"
                     type="text"
-                onChange={(e) => handleProduct(e.target.value, 'default_price')}
+                    onChange={(e) => handleProduct(e.target.value, 'default_price')}
 
                 />
 
-                <Input
+                {/* <Input
                     label="Enter default size*"
                     placeholder="Enter default size"
                     type="text"
-                onChange={(e) => handleProduct(e.target.value, 'default_size')}
-                />
+                    onChange={(e) => handleProduct(e.target.value, 'default_size')}
+                /> */}
 
+                <label className="form-control w-full ">
+
+                    <h2><strong>Select Size</strong></h2>
+
+                    <select
+                        className="select  select-md rounded-md border border-black/30"
+                        onChange={(e) => handleVarities(e.target.value, 'size_id')}>
+                        <option selected>Select Sizes</option>
+                        {
+                            productsize.map((item) => {
+                                return (
+                                    <option value={item.id}>{item.size_value}</option>
+                                )
+                            })
+                        }
+                    </select>
+                </label>
 
                 <Input
                     label="Product description*"
                     placeholder="Enter Product description "
                     type="text"
-                onChange={(e) => handleProduct(e.target.value, 'description')}
+                    onChange={(e) => handleProduct(e.target.value, 'description')}
                 />
                 <Input
                     label="Long description*"
                     placeholder="Enter Long description"
                     type="text"
-                onChange={(e) => handleProduct(e.target.value, 'long_description')}
+                    onChange={(e) => handleProduct(e.target.value, 'long_description')}
                 />
                 <Input
                     label="Product Image*"
                     placeholder="Enter Product Image"
                     type="text"
-                onChange={(e) => handleProduct(e.target.value, 'product_image')}
+                    onChange={(e) => handleProduct(e.target.value, 'product_image')}
                 />
                 <div className='w-full h-[50px] flex  items-center'>
                     <button type='button' className="btn btn-sm btn-success" onClick={productclick}>Add Category </button>
