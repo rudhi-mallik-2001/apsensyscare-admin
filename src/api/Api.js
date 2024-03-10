@@ -80,4 +80,9 @@ export const deleteproductvarity = async (data) => {
         .post("http://apsensyscare.com/backend_api/deleteproductvarity",data)
         .then((response) => response.data.images)
 };
+export const fetchUser = async (data) => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/admin-login",data)
+        .then((response) => response.data.details)
+};
  
