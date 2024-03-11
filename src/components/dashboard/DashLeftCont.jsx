@@ -17,14 +17,6 @@ function DashLeftCont() {
           <div className='w-full flex flex-col gap-y-2'>
           <h1 class="text-2xl font-extrabold leading-none tracking-tight text-gray-400 md:text-2xl lg:text-2xl p-4 dark:text-white">Pending Orders</h1>
           <Pendingorder/>
-          <Pendingorder/>
-          <Pendingorder/>
-          <Pendingorder/>
-          <Pendingorder/>
-          <Pendingorder/>
-          <Pendingorder/>
-          <Pendingorder/>
-          <Pendingorder/>
           </div>
           
         </div>

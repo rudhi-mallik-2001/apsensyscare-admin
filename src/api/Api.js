@@ -13,30 +13,31 @@ export const fetchAllCategory = async () => {
     return await axios
         .post("http://apsensyscare.com/backend_api/fatch_category")
         .then((response) => response.data.category)
-};  
+};
+  
 export const fetchProductdetailsById = async (id) => { 
     return await axios
-        .post("http://apsensyscare.com/backend_api/productdetailsbyid",id)
+        .post("http://apsensyscare.com/backend_api/productdetailsbyid", id)
         .then((response) => response.data.productdetails)
-};  
+};
 export const updateProductsById = async (details) => {
     return await axios
-        .post("http://apsensyscare.com/backend_api/updateproducts",details)
+        .post("http://apsensyscare.com/backend_api/updateproducts", details)
         .then((response) => response.data)
-};  
+};
 export const updateCategoryById = async (details) => {
     return await axios
-        .post("http://apsensyscare.com/backend_api/updateCategory",details) 
+        .post("http://apsensyscare.com/backend_api/updateCategory", details)
         .then((response) => response.data)
 };
 export const fetchCategoryById = async (id) => {
     return await axios
-        .post("http://apsensyscare.com/backend_api/categorydetailsbyid",id)
+        .post("http://apsensyscare.com/backend_api/categorydetailsbyid", id)
         .then((response) => response.data.categorydetails)
-};   
+};
 export const Addcategory = async (category) => { 
     return await axios
-        .post("http://apsensyscare.com/backend_api/addcategory",category)
+        .post("http://apsensyscare.com/backend_api/addcategory", category)
         .then((response) => response.data)
 }; 
 export const Addproduct = async (product) => {
@@ -47,12 +48,12 @@ export const Addproduct = async (product) => {
 
 export const uploadImage = async (data) => {
     return await axios
-        .post("http://apsensyscare.com/backend_api/i-upload",data)
+        .post("http://apsensyscare.com/backend_api/i-upload", data)
         .then((response) => response.data)
 };
 export const getProductSizes = async (id) => {
     return await axios
-        .post("http://apsensyscare.com/backend_api/productsizes",id)
+        .post("http://apsensyscare.com/backend_api/productsizes", id)
         .then((response) => response.data.productsizes)
 };
 export const fetchSize = async () => {
@@ -62,7 +63,7 @@ export const fetchSize = async () => {
 };
 export const addvarity = async (data) => {
     return await axios
-        .post("http://apsensyscare.com/backend_api/addproductvarities",data)
+        .post("http://apsensyscare.com/backend_api/addproductvarities", data)
         .then((response) => response.data)
 };
 // export const addproduct = async (data) => {
@@ -72,12 +73,35 @@ export const addvarity = async (data) => {
 // };
 export const imagMagnifing = async (data) => {
     return await axios
-        .post("http://apsensyscare.com/backend_api/magnifying",data)
+        .post("http://apsensyscare.com/backend_api/magnifying", data)
         .then((response) => response.data.images)
 };
 export const deleteproductvarity = async (data) => {
     return await axios
-        .post("http://apsensyscare.com/backend_api/deleteproductvarity",data)
+        .post("http://apsensyscare.com/backend_api/deleteproductvarity", data)
         .then((response) => response.data.images)
+};
+
+// dashboard........
+
+export const fetchpendingOrder = async () => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/pendingorder")
+        .then((response) => response.data.order)
+}
+export const fetchorderDetails = async (id) => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/orderDetails",id)
+        .then((response) => response.data)
+}
+export const fetchUser = async (data) => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/admin-login",data)
+        .then((response) => response.data.details)
+};
+export const orderCommand    = async (data) => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/commands",data)
+        .then((response) => response.data.orderdata)
 };
  
