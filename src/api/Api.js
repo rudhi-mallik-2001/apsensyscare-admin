@@ -14,8 +14,8 @@ export const fetchAllCategory = async () => {
         .post("http://apsensyscare.com/backend_api/fatch_category")
         .then((response) => response.data.category)
 };
-  
-export const fetchProductdetailsById = async (id) => { 
+
+export const fetchProductdetailsById = async (id) => {
     return await axios
         .post("http://apsensyscare.com/backend_api/productdetailsbyid", id)
         .then((response) => response.data.productdetails)
@@ -35,14 +35,14 @@ export const fetchCategoryById = async (id) => {
         .post("http://apsensyscare.com/backend_api/categorydetailsbyid", id)
         .then((response) => response.data.categorydetails)
 };
-export const Addcategory = async (category) => { 
+export const Addcategory = async (category) => {
     return await axios
         .post("http://apsensyscare.com/backend_api/addcategory", category)
         .then((response) => response.data)
-}; 
+};
 export const Addproduct = async (product) => {
     return await axios
-        .post("http://apsensyscare.com/backend_api/addproduct",product)
+        .post("http://apsensyscare.com/backend_api/addproduct", product)
         .then((response) => response.data)
 };
 
@@ -91,12 +91,22 @@ export const fetchpendingOrder = async () => {
 }
 export const fetchorderDetails = async (id) => {
     return await axios
-        .post("http://apsensyscare.com/backend_api/orderDetails",id)
+        .post("http://apsensyscare.com/backend_api/orderDetails", id)
         .then((response) => response.data)
 }
 export const fetchUser = async (data) => {
     return await axios
-        .post("http://apsensyscare.com/backend_api/admin-login",data)
+        .post("http://apsensyscare.com/backend_api/admin-login", data)
         .then((response) => response.data.details)
 };
- 
+export const orderCommand = async (data) => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/commands", data)
+        .then((response) => response.data.orderdata)
+};
+export const Updatestatus = async (data) => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/statusupdate", data)
+        .then((response) => response.data)
+};
+

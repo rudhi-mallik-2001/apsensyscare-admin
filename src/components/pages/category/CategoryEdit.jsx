@@ -9,9 +9,9 @@ const CategoryEdit = () => {
     const[categorydetails,setCategorydetails]=useState({});
     const handelclick = (ref) => {
         setClicktab(ref)
-    }
+    } 
     useEffect(() => {
-      fetchCategoryById(id).then((res) => { 
+      fetchCategoryById(id).then((res) => {  
           console.log('called')
           setCategorydetails(res[0]);
       })
