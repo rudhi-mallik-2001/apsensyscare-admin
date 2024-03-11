@@ -17,4 +17,4 @@ function Varitysizingimage() {
     )
 }
 
-export default Varitysizingimage
+export default Varitysizingimage 
