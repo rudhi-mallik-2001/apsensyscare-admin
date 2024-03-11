@@ -11,10 +11,12 @@ import Addproductvarities from './pages/product/Addproductvarities.jsx'
 import CategoryDetailsEdit from './pages/category/CategoryDetailsEdit.jsx'
 import Addcategorycont from './pages/category/CategoryDetailsEdit.jsx'
 import SingelOrder from './pages/order/SingelOrder.jsx'
-import { fetchProducts, fetchAllProducts, fetchAllCategory,fetchProductdetailsById,updateProductsById,updateCategoryById,fetchCategoryById,Addcategory,uploadImage,getProductSizes,fetchSize,addvarity,imagMagnifing,deleteproductvarity,Addproduct,fetchorderDetails} from '../api/Api'
-
-
+import SignIn from './user/SignIn.jsx'
+import Commands from './pages/commands/Commands.jsx'
+import { fetchProducts, fetchAllProducts, fetchAllCategory,fetchProductdetailsById,updateProductsById,updateCategoryById,fetchCategoryById,Addcategory,uploadImage,getProductSizes,fetchSize,addvarity,imagMagnifing,deleteproductvarity,Addproduct,fetchUser,fetchorderDetails} from '../api/Api'
 
  
-export { UpperBar, SideBar, ProductsCont, Categories, ProductEdit,CategoryEdit, fetchProducts, fetchAllProducts, fetchAllCategory,fetchProductdetailsById,Input,ProductDetailsEdit,updateProductsById,CategoryDetailsEdit,updateCategoryById,fetchCategoryById,uploadImage,Addcategory,Addcategorycont,Image,getProductSizes,fetchSize,Addproductvarities,addvarity,imagMagnifing,deleteproductvarity,Addproduct,SingelOrder,fetchorderDetails}  
+
+ 
+export { UpperBar, SideBar, ProductsCont, Categories, ProductEdit,CategoryEdit, fetchProducts, fetchAllProducts, fetchAllCategory,fetchProductdetailsById,Input,ProductDetailsEdit,updateProductsById,CategoryDetailsEdit,updateCategoryById,fetchCategoryById,uploadImage,Addcategory,Addcategorycont,Image,getProductSizes,fetchSize,Addproductvarities,addvarity,imagMagnifing,deleteproductvarity,Addproduct,SignIn,fetchUser,Commands,SingelOrder,fetchorderDetails}  
   

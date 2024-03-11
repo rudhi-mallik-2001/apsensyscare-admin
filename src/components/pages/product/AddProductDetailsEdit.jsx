@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Input, Image, fetchAllCategory, fetchSize } from '../../index'
+import { Input, Image, fetchAllCategory, fetchSize,Addproduct } from '../../index'
+import { toast } from 'react-toastify'
 
 export default function AddProductDetailsEdit() {
     const productkey = {
@@ -23,23 +24,28 @@ export default function AddProductDetailsEdit() {
         setAddproduct((prev) => ({ ...prev, [key]: val }))
     }
     const productclick = () => {
+        Addproduct(addproduct).then(()=>{
+            // console.log("clicking");
+            toast.success('Update Success')
+            setAddproduct(productkey)
+        })
         console.log("submitted", addproduct);
     }
     useEffect(() => {
-        // getProductSizes(product.id).then(()=>{
-
-        // })
+       
         fetchAllCategory().then((res) => {
+            console.log("category call");
             setAdddetails(res)
         })
 
     }, [])
     useEffect(() => {
         fetchSize().then((res) => {
-            console.log('called')
+            console.log('size called')
             setproductsize(res);
         })
     }, [])
+ 
     return (
         <div className='w-[98%] p-2 flex flex-row  gap-2 border rounded-md'>
             <div className='w-[50%]'>
@@ -110,16 +116,16 @@ export default function AddProductDetailsEdit() {
 
                 <label className="form-control w-full ">
 
-                    <h2><strong>Select Size</strong></h2>
+                    <h2><strong>Select default Size</strong></h2>
 
                     <select
                         className="select  select-md rounded-md border border-black/30"
-                        onChange={(e) => handleVarities(e.target.value, 'size_id')}>
-                        <option selected>Select Sizes</option>
+                        onChange={(e) => handleProduct(e.target.value, 'default_size')}>
+                        <option selected>Select default Sizes</option>
                         {
                             productsize.map((item) => {
                                 return (
-                                    <option value={item.id}>{item.size_value}</option>
+                                    <option value={item.size_value}>{item.size_value}</option>
                                 )
                             })
                         }

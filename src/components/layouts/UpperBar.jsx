@@ -1,5 +1,12 @@
+import { useNavigate } from "react-router-dom";
 
 const UpperBar = () => {
+    const navigate = useNavigate()
+
+    const handellogout=()=>{
+        localStorage.removeItem('REFRESSTOKEN')
+        navigate('/');
+    }
     return (
         <div className="navbar bg-base-100 justify-between border-b-2 mb-2">
             <div className="flex-none">
@@ -18,14 +25,14 @@ const UpperBar = () => {
                         </div>
                     </div>
                     <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                        <li>
+                        {/* <li>
                             <a className="justify-between">
                                 Profile
                                 <span className="badge">New</span>
                             </a>
                         </li>
-                        <li><a>Settings</a></li>
-                        <li><a>Logout</a></li>
+                        <li><a>Settings</a></li> */}
+                        <li onClick={handellogout}><a>Logout</a></li>
                     </ul>
                 </div>
             </div>

@@ -14,7 +14,8 @@ export const fetchAllCategory = async () => {
         .post("http://apsensyscare.com/backend_api/fatch_category")
         .then((response) => response.data.category)
 };
-export const fetchProductdetailsById = async (id) => {
+  
+export const fetchProductdetailsById = async (id) => { 
     return await axios
         .post("http://apsensyscare.com/backend_api/productdetailsbyid", id)
         .then((response) => response.data.productdetails)
@@ -39,9 +40,9 @@ export const Addcategory = async (category) => {
         .post("http://apsensyscare.com/backend_api/addcategory", category)
         .then((response) => response.data)
 }; 
-export const Addproduct = async (category) => {
+export const Addproduct = async (product) => {
     return await axios
-        .post("http://apsensyscare.com/backend_api/addproduct",category)
+        .post("http://apsensyscare.com/backend_api/addproduct",product)
         .then((response) => response.data)
 };
 
@@ -65,6 +66,11 @@ export const addvarity = async (data) => {
         .post("http://apsensyscare.com/backend_api/addproductvarities", data)
         .then((response) => response.data)
 };
+// export const addproduct = async (data) => {
+//     return await axios
+//         .post("http://apsensyscare.com/backend_api/addproduct",data)
+//         .then((response) => response.data)
+// };
 export const imagMagnifing = async (data) => {
     return await axios
         .post("http://apsensyscare.com/backend_api/magnifying", data)
@@ -88,3 +94,9 @@ export const fetchorderDetails = async (id) => {
         .post("http://apsensyscare.com/backend_api/orderDetails",id)
         .then((response) => response.data)
 }
+export const fetchUser = async (data) => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/admin-login",data)
+        .then((response) => response.data.details)
+};
+ 

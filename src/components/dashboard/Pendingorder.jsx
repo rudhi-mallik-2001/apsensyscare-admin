@@ -16,7 +16,7 @@ function Pendingorder() {
                 pendingOrder.map((order,idx) => {
                     return (
                         <Link 
-                        to={`orders/${order.order_id}`}
+                        to={`commands/orders/${order.order_id}`}
                         key={idx} 
                         className='w-full flex justify-between  gap-y-2 p-4 hover:bg-[#f6f6f6] cursor-pointer'>
                             <div className='w-full flex justify-start items-start  gap-2'>

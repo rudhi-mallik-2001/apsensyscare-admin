@@ -39,7 +39,7 @@ const SingelOrder = () => {
   console.log(orderDetails)
   return (
     <div className='w-full flex justify-start items-start px-2'>
-      <div className='w-[50%] flex flex-col border-2 rounded-md p-2'>
+      <div className='w-full lg:w-[50%] flex flex-col justify-start border-2 rounded-md p-2'>
 
         <div className='w-full flex flex-row justify-between items-center px-4 py-4'>
           <div className='w-[30%] flex flex-col'>
