@@ -15,7 +15,7 @@ export default function Tablecanceled() {
                 <thead className="bg-gray-50">
                     <tr>
                         <th
-                            scope="col"
+                            scope="col" 
                             className="px-4 py-3.5 text-left text-sm font-normal text-gray-700"
                         >
                             <span>Date</span>

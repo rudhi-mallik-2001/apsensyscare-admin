@@ -13,10 +13,10 @@ import Addcategorycont from './pages/category/CategoryDetailsEdit.jsx'
 import SingelOrder from './pages/order/SingelOrder.jsx'
 import SignIn from './user/SignIn.jsx'
 import Commands from './pages/commands/Commands.jsx'
-import { fetchProducts, fetchAllProducts, fetchAllCategory,fetchProductdetailsById,updateProductsById,updateCategoryById,fetchCategoryById,Addcategory,uploadImage,getProductSizes,fetchSize,addvarity,imagMagnifing,deleteproductvarity,Addproduct,fetchUser,fetchorderDetails,orderCommand} from '../api/Api'
+import { fetchProducts, fetchAllProducts, fetchAllCategory,fetchProductdetailsById,updateProductsById,updateCategoryById,fetchCategoryById,Addcategory,uploadImage,getProductSizes,fetchSize,addvarity,imagMagnifing,deleteproductvarity,Addproduct,fetchUser,fetchorderDetails,orderCommand,Updatestatus} from '../api/Api'
 
  
 
  
-export { UpperBar, SideBar, ProductsCont, Categories, ProductEdit,CategoryEdit, fetchProducts, fetchAllProducts, fetchAllCategory,fetchProductdetailsById,Input,ProductDetailsEdit,updateProductsById,CategoryDetailsEdit,updateCategoryById,fetchCategoryById,uploadImage,Addcategory,Addcategorycont,Image,getProductSizes,fetchSize,Addproductvarities,addvarity,imagMagnifing,deleteproductvarity,Addproduct,SignIn,fetchUser,Commands,SingelOrder,fetchorderDetails,orderCommand}  
+export { UpperBar, SideBar, ProductsCont, Categories, ProductEdit,CategoryEdit, fetchProducts, fetchAllProducts, fetchAllCategory,fetchProductdetailsById,Input,ProductDetailsEdit,updateProductsById,CategoryDetailsEdit,updateCategoryById,fetchCategoryById,uploadImage,Addcategory,Addcategorycont,Image,getProductSizes,fetchSize,Addproductvarities,addvarity,imagMagnifing,deleteproductvarity,Addproduct,SignIn,fetchUser,Commands,SingelOrder,fetchorderDetails,orderCommand,Updatestatus}  
   
