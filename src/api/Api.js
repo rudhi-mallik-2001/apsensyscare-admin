@@ -114,4 +114,9 @@ export const Addsize = async (data) => {
         .post("http://apsensyscare.com/backend_api/Addsize", data)
         .then((response) => response.data)
 };
+export const customerfetch = async (data) => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/customer", data)
+        .then((response) => response.data.Customer_order_details)
+};
 

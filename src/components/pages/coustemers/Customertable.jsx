@@ -1,48 +1,63 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { customerfetch } from '../../../api/Api'
 
 export default function Customertable() {
+    const [coustemer, setcoustemer] = useState([])
+    useEffect(() => {
+        customerfetch("Delivered")
+        .then((res) => {
+            setcoustemer(res);
+        })
+    }, [])
+    
     return (
         <div className="w-full">
-            <table className="table border border-black ">
+
+            <table className="table border  ">
                 <thead>
                     <tr>
-                        <th></th>
+                        <th>id</th>
                         <th>Customer</th>
                         <th>Last seen</th>
                         <th>Orders</th>
                         <th>Total spend</th>
-                        <th>Latest Purchase</th>
                        
                     </tr>
                 </thead>
                 <tbody>
-                    <tr className="hover">
-                        <th>1</th>
-                        <td>Cy Ganderton</td>
-                        <td>Quality Control Specialist</td>
-                        <td>Blue</td>
-                        <td>Cy Ganderton</td>
-                        <td>Quality Control Specialist</td>
+                    {
+                        coustemer.map((custmer,id)=>(
+
+                    <tr className="hover" key={id}>
+                        <td>
+                            <div className="text-sm font-medium text-gray-900">{++id}</div>
+                        </td>
+                        <td>
+                            <div className="text-sm font-medium text-gray-900">
+                                {custmer.f_name}
+                            </div>
+                        </td>
+                        <td>
+                            <div className="text-sm font-medium text-gray-900">
+                                {custmer.last_seen}
+                            </div>
+                        </td>
+                        <td>
+                            <div className="text-sm font-medium text-gray-900">
+                                {custmer.total_quantity}
+                            </div>
+                        </td>
+                        <td>
+                            <div className="text-sm font-medium text-gray-900">
+                                {custmer.order_total}
+                            </div>
+                        </td>
+                    
                         
                     </tr>
-                    <tr className="hover">
-                        <th>2</th>
-                        <td>Hart Hagerty</td>
-                        <td>Desktop Support Technician</td>
-                        <td>Purple</td>
-                        <td>Hart Hagerty</td>
-                        <td>Desktop Support Technician</td>
-                       
-                    </tr>
-                    <tr className="hover">
-                        <th>3</th>
-                        <td>Brice Swyre</td>
-                        <td>Tax Accountant</td>
-                        <td>Red</td>
-                        <td>Brice Swyre</td>
-                        <td>Tax Accountant</td>
-                       
-                    </tr>
+                        ))
+                    }
+                 
                 </tbody>
             </table>
         </div>
