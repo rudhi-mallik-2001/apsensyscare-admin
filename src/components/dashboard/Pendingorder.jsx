@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { fetchpendingOrder } from '../../api/Api'
+import {  orderCommand } from '../../api/Api'
 import { Link } from 'react-router-dom'
 
 function Pendingorder() {
     const [pendingOrder, setpendingOrder] = useState([])
     useEffect(() => {
-        fetchpendingOrder().then((res) => {
+        orderCommand({status:'payment pending'}).then((res) => {
             setpendingOrder(res)
         })
     }, [])
@@ -16,7 +16,7 @@ function Pendingorder() {
                 pendingOrder.map((order,idx) => {
                     return (
                         <Link 
-                        to={`commands/orders/${order.order_id}`}
+                        to={`commands/orders/${order?.order_id.trim()}`}
                         key={idx} 
                         className='w-full flex justify-between  gap-y-2 p-4 hover:bg-[#f6f6f6] cursor-pointer'>
                             <div className='w-full flex justify-start items-start  gap-2'>

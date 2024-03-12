@@ -84,11 +84,7 @@ export const deleteproductvarity = async (data) => {
 
 // dashboard........
 
-export const fetchpendingOrder = async () => {
-    return await axios
-        .post("http://apsensyscare.com/backend_api/pendingorder")
-        .then((response) => response.data.order)
-}
+
 export const fetchorderDetails = async (id) => {
     return await axios
         .post("http://apsensyscare.com/backend_api/orderDetails", id)
@@ -114,9 +110,14 @@ export const Addsize = async (data) => {
         .post("http://apsensyscare.com/backend_api/Addsize", data)
         .then((response) => response.data)
 };
-export const customerfetch = async (data) => {
+export const customerfetch = async () => {
     return await axios
-        .post("http://apsensyscare.com/backend_api/customer", data)
+        .post("http://apsensyscare.com/backend_api/customer")
         .then((response) => response.data.Customer_order_details)
+};
+export const revenueHistory = async () => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/revenuehistory")
+        .then((response) => response.data.RevenueHistory)
 };
 
