@@ -16,8 +16,9 @@ const Products = ({ filterItem }) => {
   }, [filterItem])
   return (
     <div className='w-[calc(100%_-_200px)] flex flex-row flex-wrap justify-start items-start content-start gap-2 bg-[#fff] px-2'>
-      <div className='w-[100%] border rounded-md p-2 flex justify-end  gap-y-2 mb-2'>
-        <Link className="w-[10%] flex flex-row justify-around cursor-pointer rounded-md hover:bg-[#ffb356] hover:text-[#fff] py-1" to={'/add-product'}>Add Product</Link>
+      <div className='w-[100%] border rounded-md p-2 flex flex-row justify-end  gap-y-2 mb-2'>
+        <Link className="w-[10%] flex flex-row justify-around cursor-pointer rounded-md hover:bg-[#ffb356] hover:border border-black hover:text-[#fff] py-1 gap-2" to={'/add-size'}>Add Size</Link>
+        <Link className="w-[10%] flex flex-row justify-around cursor-pointer rounded-md hover:bg-[#ffb356] hover:border border-black hover:text-[#fff] py-1 gap-2" to={'/add-product'}>Add Product</Link>
       </div>
       <div className='flex flex-row flex-wrap justify-start items-start content-start gap-2'>
         {
