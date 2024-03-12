@@ -9,7 +9,7 @@ export default function Addproductsize() {
     }
     const [sizeadd, setSizeadd] = useState(size)
     const Addsizeclick=()=>{
-            console.log("clicking");
+            // console.log("clicking");
             if(sizeadd.size_value!=""){
                 Addsize(sizeadd).then((res)=>{
                     toast.success('Update Success')
