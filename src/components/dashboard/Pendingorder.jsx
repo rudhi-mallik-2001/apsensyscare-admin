@@ -3,9 +3,9 @@ import { fetchpendingOrder } from '../../api/Api'
 import { Link } from 'react-router-dom'
 
 function Pendingorder() {
-    const [pendingOrder, setpendingOrder] = useState([])
+    const [pendingOrder, setpendingOrder] = useState([]) 
     useEffect(() => {
-        fetchpendingOrder().then((res) => {
+        fetchpendingOrder({ status: "payment panding" }).then((res) => {
             setpendingOrder(res)
         })
     }, [])

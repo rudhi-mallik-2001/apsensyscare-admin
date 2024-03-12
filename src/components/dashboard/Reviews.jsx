@@ -13,7 +13,7 @@ function Reviews() {
               
             </div>
             <button class="bg-grey hover:bg-[#ffb356] text-black hover:text-white rounded-md">
-                    See all Reviews
+                    See all Users
                 </button>
         </div>
     )

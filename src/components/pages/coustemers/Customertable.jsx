@@ -4,9 +4,10 @@ import { customerfetch } from '../../../api/Api'
 export default function Customertable() {
     const [coustemer, setcoustemer] = useState([])
     useEffect(() => {
-        customerfetch("Delivered")
+        customerfetch("fetch")
         .then((res) => {
             setcoustemer(res);
+            console.log(coustemer);
         })
     }, [])
     
