@@ -4,10 +4,11 @@ import App from './App.jsx'
 import './index.css'
 import Layout from './Layout.jsx'
 import { Route,  RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
-import { Categories, ProductsCont, ProductEdit, CategoryEdit, SignIn, Commands, SingelOrder } from './components/index.js'
+import { Categories, ProductsCont, ProductEdit, CategoryEdit, SignIn, Commands, SingelOrder, Coustemers } from './components/index.js'
 import Addcategorycont from './components/pages/category/Addcategorycont.jsx'
 import Addproductcont from './components/pages/product/Addproductcont.jsx'
 import { checkTokenLoader } from './utils/utils.js'
+import Addproductsize from './components/pages/category/Addproductsize.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,10 +19,12 @@ const router = createBrowserRouter(
         <Route path='products/:id' element={<ProductsCont />} />
         <Route path='category' element={<Categories />} />
         <Route path='orders' element={<Categories />} />
+        <Route path='customers' element={<Coustemers/>}/>
       <Route path='products/edit/:id' element={<ProductEdit />} />
         <Route path='category/edit/:id' element={<CategoryEdit />} />
         <Route path='add-category' element={<Addcategorycont />} />
         <Route path='add-product' element={<Addproductcont />} />
+        <Route path='add-size' element={<Addproductsize />} />
         <Route path='commands' element={<Commands />} />
         <Route path='commands/orders/:id' element={<SingelOrder />} />
       </Route>

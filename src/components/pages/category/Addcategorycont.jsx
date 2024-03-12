@@ -27,22 +27,8 @@ function Addcategorycont() {
                             <AddCategoryDetailsEdit />
                         </div>
                     </div>
-                    <input ref={ref} type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="varity and sizing"
-                        readOnly checked={categoryclick === '3' ? true : false}
-                        onClick={() => handelclick('3')} />
-                    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box rounded-b-[0px] ">
-                        <div className='w-full  flex flex-col justify-start items-start gap-2 p-6'>
-                            {/* components */}
-                        </div>
-                    </div>
-                    <input type="radio" name="my_tabs_2" role="tab" className="tab !w-max" aria-label="Magnifying Images"
-                        readOnly
-                        checked={categoryclick === '4' ? true : false}
-                        onClick={() => handelclick('4')}
-                    />
-                    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box rounded-b-[0px] p-6">
-                        {/* components */}
-                    </div>
+
+
                 </div>
                 <div className='flex flex-row justify-between bg-[#d9d9d9] px-6 py-3 rounded-b-[10px]'>
                     {/* <button className="btn btn-sm btn-success">Success</button> */}

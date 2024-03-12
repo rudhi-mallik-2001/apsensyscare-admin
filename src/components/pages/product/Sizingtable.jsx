@@ -33,9 +33,9 @@ function Sizingtable({isadded,updatestatus}) {
                         <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Stock
                         </th>
-                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        {/* <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Edit
-                        </th>
+                        </th> */}
                         <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Delete
                         </th>
@@ -55,9 +55,9 @@ function Sizingtable({isadded,updatestatus}) {
                                     <td className="px-6 py-4 whitespace-nowrap">
                                         <div className="text-sm text-gray-900">{item.stock_qty}</div>
                                     </td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    {/* <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                         <a href="#" className="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                    </td>
+                                    </td> */}
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                         <a href="#" className="text-red-600 hover:text-red-900" onClick={()=>deleteClick(item.id)}>Delete</a>
                                     </td>

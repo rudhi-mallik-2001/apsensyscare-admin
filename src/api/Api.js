@@ -109,4 +109,9 @@ export const Updatestatus = async (data) => {
         .post("http://apsensyscare.com/backend_api/statusupdate", data)
         .then((response) => response.data)
 };
+export const Addsize = async (data) => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/Addsize", data)
+        .then((response) => response.data)
+};
 
