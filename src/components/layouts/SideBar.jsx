@@ -11,9 +11,10 @@ const SideBar = () => {
         customer: false,
         dashboard: true
     });
-    const sidebarClick = (click) => {
-        const current = selectedItem.current;
-        setSelectedItem((prev) => ({ ...prev, [click]: true, [current]: false, current: click }))
+    const sidebarClick=(click)=>{
+        const current=selectedItem.current
+        if(selectedItem.current!==click)
+            setSelectedItem((prev)=>({...prev,[click]:true,[current]:false,current:click}))
     }
     return (
         <div className='w-[200px] flex flex-col bg-[#dedede] border-r-2 p-2 pl-[24px] gap-2 font-medium'>
@@ -31,7 +32,7 @@ const SideBar = () => {
             </Link>
             <div className='w-full flex flex-row justify-start items-center gap-2'>
                 <div className="collapse ">
-                    <input type="checkbox" className='min-h-0' />
+                    <input type="checkbox" className='min-h-0' checked/>
                     <div className="flex flex-row collapse-title min-h-0 p-0 gap-3 py-2 px-1 hover:bg-[#f6f6f6] rounded-md">
                         <div className='w-auto '>
                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" className="bi bi-currency-rupee" viewBox="0 0 16 16">
@@ -65,7 +66,7 @@ const SideBar = () => {
 
             <div className='w-full flex flex-row justify-start items-center gap-2'>
                 <div className="collapse ">
-                    <input type="checkbox" className='min-h-0' />
+                    <input type="checkbox" className='min-h-0' checked/>
                     <div className="flex flex-row collapse-title min-h-0 p-0 gap-3 py-2 px-1  hover:bg-[#f6f6f6] rounded-md">
                         <div className='w-auto '>
                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" className="bi bi-bookmark-plus" viewBox="0 0 16 16">
