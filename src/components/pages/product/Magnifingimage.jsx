@@ -1,28 +1,57 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import ImageMagnifying from './ImageMagnifying';
 import { imagMagnifing } from '../../index'
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { useMagnifyingContext } from '../../../context/categoryFilterContext';
 
 function Magnifingimage() {
     const { id } = useParams();
-    const [magnifyingImage, setMagnifyingImage] = useState({});
+    const { changeImage,magnifyingImage,setMagnifyingImage } = useMagnifyingContext()
+    // const [magnifyingImage, setMagnifyingImage] = useState({});
+    const [clickitem, setclickitem] = useState('');
     useEffect(() => {
         imagMagnifing(id).then((res) => {
-            setMagnifyingImage(res[0]);
+            changeImage(res[0]);
         })
     }, [id])
-    // const handelclick = (ref) => { 
-    //     setClicktab(ref)
-    // } 
+    const handelclick = (name, path) => {
+        if (path == 'carousel-100-100') {
+            if (magnifyingImage.image_100.indexOf(`@@@${name}`) !== -1)
+                setMagnifyingImage((prev) => ({ ...prev, image_100: magnifyingImage.image_100.replace(`@@@${name}`, '') }))
+            else if (magnifyingImage.image_100.indexOf(`${name}@@@`) !== -1)
+                setMagnifyingImage((prev) => ({ ...prev, image_100: magnifyingImage.image_100.replace(`${name}@@@`, '') }))
+            else
+                setMagnifyingImage((prev) => ({ ...prev, image_100: magnifyingImage.image_100.replace(`${name}`, '') }))
+            console.log(name, path)
+        } else if (path === 'carousel-230-460') {
+            if (magnifyingImage.image_230.indexOf(`@@@${name}`) !== -1)
+                setMagnifyingImage((prev) => ({ ...prev, image_230: magnifyingImage.image_230.replace(`@@@${name}`, '') }))
+            else if (magnifyingImage.image_230.indexOf(`${name}@@@`) !== -1)
+                setMagnifyingImage((prev) => ({ ...prev, image_230: magnifyingImage.image_230.replace(`${name}@@@`, '') }))
+            else
+                setMagnifyingImage((prev) => ({ ...prev, image_230: magnifyingImage.image_230.replace(`${name}`, '') }))
+            console.log(name, path)
+        } else {
+            if (magnifyingImage.image_1200.indexOf(`@@@${name}`) !== -1)
+                setMagnifyingImage((prev) => ({ ...prev, image_1200: magnifyingImage.image_1200.replace(`@@@${name}`, '') }))
+            else if (magnifyingImage.image_1200.indexOf(`${name}@@@`) !== -1)
+                setMagnifyingImage((prev) => ({ ...prev, image_1200: magnifyingImage.image_1200.replace(`${name}@@@`, '') }))
+            else
+                setMagnifyingImage((prev) => ({ ...prev, image_1200: magnifyingImage.image_1200.replace(`${name}`, '') }))
+            console.log(name, path)
+        }
+        // setClicktab(name)
+    }
     return (
         <div className='w-full flex flex-col border p-2'>
-            <h2><strong>Small Image</strong></h2>
-            <ImageMagnifying image={magnifyingImage?.image_100} path={'carousel-100-100'}/>
-            <h2><strong>Medium Image</strong></h2>
-            <ImageMagnifying image={magnifyingImage?.image_230} path={'carousel-230-460'}/>
+            <h2><strong>Small Image [100px/100px]</strong></h2>
+            <ImageMagnifying image={magnifyingImage?.image_100} path={'carousel-100-100'} handelclick={handelclick} />
+            <h2><strong>Medium Image [570px/460px] OR [230px/460px]</strong></h2>
+            <ImageMagnifying image={magnifyingImage?.image_230} path={'carousel-230-460'} handelclick={handelclick} />
 
-            <h2><strong>Large Image</strong></h2>
-            <ImageMagnifying image={magnifyingImage?.image_1200} path={'carousel-1200-1800'}/>
+            <h2><strong>Large Image [1200px/1800px]</strong></h2>
+            <ImageMagnifying image={magnifyingImage?.image_1200} path={'carousel-1200-1800'} handelclick={handelclick} />
 
             <button className="btn w-[5%] btn-success" >Save</button>
         </div>
