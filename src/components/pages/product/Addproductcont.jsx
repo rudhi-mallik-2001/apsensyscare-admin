@@ -36,7 +36,7 @@ export default function Addproductcont() {
                             <AddProductDetailsEdit updateDetails={updateDetails} />
                         </div>
                     </div>
-                    <input ref={ref} type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="varity and sizing"
+                    <input ref={ref} type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Varity and Sizing"
                         readOnly checked={tabclick === '3' ? true : false}
                         onClick={() => handelclick('3')} />
                     <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box rounded-b-[0px] ">

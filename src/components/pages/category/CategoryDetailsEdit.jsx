@@ -57,7 +57,7 @@ function CategoryDetailsEdit({ category, updateCategory }) {
 
                 />
                 <Input
-                    label="Top Image Seller*"
+                    label="Top  Seller Image Banner*"
                     placeholder="Enter topsellers"
                     type="text"
                     value={category.topsellers}
@@ -73,7 +73,7 @@ function CategoryDetailsEdit({ category, updateCategory }) {
 
                 />
                 <Input
-                    label="Category Image Description*"
+                    label="Category Description*"
                     placeholder="Enter category description "
                     type="text"
                     value={category.category_des}

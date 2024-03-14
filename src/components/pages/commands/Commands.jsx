@@ -78,7 +78,7 @@ const Commands = () => {
           </div>
           <div className='flex flex-row justify-between bg-[#d9d9d9] px-6 py-3 rounded-b-[10px]'>
             {/* <button className="btn btn-sm btn-success">Success</button> */}
-            <button className="btn btn-sm btn-error">Delete</button>
+            {/* <button className="btn btn-sm btn-error">Delete</button> */}
           </div>
         </div>
 
@@ -87,8 +87,8 @@ const Commands = () => {
           <div className="mt-6 flex flex-col">
             <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
               <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                <div className="overflow-hidden border border-gray-200 md:rounded-lg">
-                </div>
+                {/* <div className="overflow-hidden border border-gray-200 md:rounded-lg">
+                </div> */}
               </div>
             </div>
           </div>
