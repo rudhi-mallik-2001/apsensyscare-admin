@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { usefilterContext } from '../../../context'
 import { fetchProducts, fetchAllProducts } from '../../../api/Api'
 import { Link } from 'react-router-dom'
 const Products = ({ filterItem }) => {
   const [product, setProducts] = useState([])
-  const { changeFilter, filteredItem } = usefilterContext()
   useEffect(() => {
     filterItem !== undefined ? fetchProducts(filterItem)
       .then((res) => {

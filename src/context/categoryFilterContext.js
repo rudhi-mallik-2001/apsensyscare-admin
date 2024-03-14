@@ -1,12 +1,12 @@
 import { createContext,useContext } from "react";
 
-export const CategoryFilter=createContext({
-    filteredItem:'',
-    changeFilter:(item)=>{}
+export const MagnifyingContext=createContext({
+    magnifyingImage:[],
+    changeImage:(item)=>{}
 })
 
-export const usefilterContext=()=>{
-    return useContext(CategoryFilter)
+export const useMagnifyingContext=()=>{
+    return useContext(MagnifyingContext)
 }
 
-export const FilterProvider=CategoryFilter.Provider
+export const MagnifyingContextProvider=MagnifyingContext.Provider

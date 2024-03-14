@@ -1,3 +1,3 @@
-import {usefilterContext,FilterProvider} from './categoryFilterContext'
+import {MagnifyingContext,MagnifyingContextProvider} from './categoryFilterContext'
 
-export {usefilterContext,FilterProvider};
+export {MagnifyingContext,MagnifyingContextProvider};
