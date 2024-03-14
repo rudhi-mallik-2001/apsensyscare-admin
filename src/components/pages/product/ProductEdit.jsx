@@ -14,7 +14,7 @@ const ProductEdit = () => {
         setClicktab(ref)
     } 
     useEffect(() => {
-        fetchProductdetailsById(id).then((res) => {
+        fetchProductdetailsById(id).then((res) => { 
             setDetails(res[0]);
         }) 
     }, [id])
@@ -28,7 +28,7 @@ const ProductEdit = () => {
         <div className='w-[calc(100vw_-_200px)] flex flex-col justify-start px-3'>
             <div className='w-[100%] border rounded-md p-2 flex justify-end  gap-y-2 mb-2'>
                 <Link class="w-[10%] border flex flex-row justify-around cursor-pointer rounded-md hover:bg-[#ffb356] hover:text-[#fff] py-1" to={'/add-product'}>Add Product</Link>
-            </div>
+            </div> 
             <div className='w-full flex flex-col justify-start' action="" method="post">
                 <div role="tablist" className="tabs tabs-lifted " >
                    
@@ -42,7 +42,7 @@ const ProductEdit = () => {
                         <div className='w-full flex flex-row flex-wrap justify-start items-start gap-2'>
                             <ProductDetailsEdit product={details} updateDetails={updateDetails} />
                         </div>
-                    </div>
+                    </div> 
                     <input ref={ref} type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="varity and sizing"
                         readOnly checked={clicktab === '3' ? true : false}
                         onClick={() => handelclick('3')} />

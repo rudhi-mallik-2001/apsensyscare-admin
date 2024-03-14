@@ -3,7 +3,7 @@ import { orderCommand } from '../../../api/Api'
 export default function Tablecanceled() {
     const [canceltable, setCanceltable] = useState([])
     useEffect(() => {
-        orderCommand("canceled")
+        orderCommand({ status: "payment canceled" })
           .then((res) => {
             // setCanceltable(res)
           })
@@ -97,7 +97,7 @@ export default function Tablecanceled() {
                     ))}
                 </tbody>
             </table>
-            <div className="flex items-center justify-center pt-6">
+            {/* <div className="flex items-center justify-center pt-6">
                 <a href="#" className="mx-1 cursor-not-allowed text-sm font-semibold text-gray-900">
                     <span className="hidden lg:block">&larr; Previous</span>
                     <span className="block lg:hidden">&larr;</span>
@@ -130,7 +130,7 @@ export default function Tablecanceled() {
                     <span className="hidden lg:block">Next &rarr;</span>
                     <span className="block lg:hidden">&rarr;</span>
                 </a>
-            </div>
+            </div> */}
         </div>
     )
 }

@@ -21,7 +21,7 @@ export const fetchProductdetailsById = async (id) => {
         .then((response) => response.data.productdetails)
 };
 export const updateProductsById = async (details) => {
-    return await axios
+    return await axios 
         .post("http://apsensyscare.com/backend_api/updateproducts", details)
         .then((response) => response.data)
 };
@@ -119,5 +119,22 @@ export const revenueHistory = async () => {
     return await axios
         .post("http://apsensyscare.com/backend_api/revenuehistory")
         .then((response) => response.data.RevenueHistory)
+};
+
+
+export const customerbyId = async (id) => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/customeredit", id)
+        .then((response) => response.data.CustomerEdit)
+};
+export const updatePassword = async (id) => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/updatepaswword", id)
+        .then((response) => response.data.CustomerEdit)
+};
+export const Deleteuser = async (id) => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/deleteuser", id)
+        .then((response) => response.data)
 };
 

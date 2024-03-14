@@ -52,7 +52,7 @@ const SingelOrder = () => {
                       orderDetails.order_status === "payment pending" ? <option value="payment pending" selected>Pending</option> : <option value="payment pending">Pending</option>
                     }
                     {
-                      orderDetails.order_status === 'ordered' ? <option value="ordered" selected>Ordered</option> : <option value="ordered">Ordered</option>
+                      orderDetails.order_status === 'payment_success' ? <option value="payment_success" selected>Ordered</option> : <option value="payment_success">Ordered</option>
                     }
                     {
                       orderDetails.order_status === 'delivered' ? <option value="delivered" selected>Delivered</option> : <option value="delivered">Delivered</option>

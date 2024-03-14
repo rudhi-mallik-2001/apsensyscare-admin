@@ -10,7 +10,7 @@ const Products = ({ filterItem }) => {
       }) : fetchAllProducts()
         .then((res) => {
           setProducts(res.product)
-        })
+        }) 
   }, [filterItem])
   return (
     <div className='w-[calc(100%_-_200px)] flex flex-row flex-wrap justify-start items-start content-start gap-2 bg-[#fff] px-2'>

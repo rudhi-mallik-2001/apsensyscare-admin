@@ -6,7 +6,7 @@ export default function AddProductDetailsEdit() {
     const productkey = {
         brand_name: "",
         category_id: "",
-        name: "",
+        name: "", 
         short_name: "",
         search_keywords: "",
         product_url: "",

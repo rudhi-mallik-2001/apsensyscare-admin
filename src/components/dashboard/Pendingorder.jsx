@@ -3,10 +3,10 @@ import {  orderCommand } from '../../api/Api'
 import { Link } from 'react-router-dom'
 
 function Pendingorder() {
-    const [pendingOrder, setpendingOrder] = useState([])
+    const [pendingOrder, setpendingOrder] = useState([]) 
     useEffect(() => {
         orderCommand({status:'payment pending'}).then((res) => {
-            setpendingOrder(res)
+            setpendingOrder(res) 
         })
     }, [])
     console.log(pendingOrder)

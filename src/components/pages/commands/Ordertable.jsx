@@ -5,7 +5,7 @@ export default function Ordertable() {
     const [ordertable, setOrdertable] = useState([])
     const navigate = useNavigate();
     useEffect(() => {
-        orderCommand({ status: "ordered" })
+        orderCommand({ status: "payment_success" })
             .then((res) => {
                 setOrdertable(res)
             })
@@ -108,7 +108,7 @@ export default function Ordertable() {
                     })}
                 </tbody>
             </table>
-            <div className="flex items-center justify-center pt-6 none">
+            {/* <div className="flex items-center justify-center pt-6 none">
                 <a href="#" className="mx-1 cursor-not-allowed text-sm font-semibold text-gray-900">
                     <span className="hidden lg:block">&larr; Previous</span>
                     <span className="block lg:hidden">&larr;</span>
@@ -141,7 +141,7 @@ export default function Ordertable() {
                     <span className="hidden lg:block">Next &rarr;</span>
                     <span className="block lg:hidden">&rarr;</span>
                 </a>
-            </div>
+            </div> */}
         </div>
     )
 }
