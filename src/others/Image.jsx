@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import {uploadImage} from '../api/Api'
 import { toast } from 'react-toastify'
 
-const Image = ({folder}) => {
+const Image = ({folder,current=false,path,handelImage=()=>{}}) => {
     const [selectedImage, setSelectedImage] = useState(null);
     const [uploadedImage, SetuploadedImage] = useState('');
+    
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         setSelectedImage(file);
@@ -21,10 +22,14 @@ const Image = ({folder}) => {
         formdata.append('folder', folder);
         uploadImage(formdata).then((res) => {
             if (res.status === 'success') {
-                console.log('hello')
+                // console.log('hello')
                 SetuploadedImage(res.name)
                 navigator.clipboard.writeText(res.name);
                 toast("Image Name coppied");
+                if(current){
+                    handelImage(res.name,path)
+                    console.log(res.name)
+                }
             }
         })
     }

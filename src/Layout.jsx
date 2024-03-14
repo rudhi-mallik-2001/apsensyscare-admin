@@ -6,12 +6,17 @@ import { useState } from 'react';
 import { MagnifyingContextProvider } from './context';
 
 const Layout = () => {
-    const [magnifyingImage,setMagnifyingImage]=useState([])
-    const changeImage=(value)=>{
+    const [magnifyingImage, setMagnifyingImage] = useState([])
+    const [editmagnifyingImage, seteditmagnifyingImage] = useState({
+        image_100: [],
+        image_230: [],
+        image_1200: []
+    })
+    const changeImage = (value) => {
         setMagnifyingImage(value)
     }
     return (
-        <MagnifyingContextProvider value={{changeImage,magnifyingImage,setMagnifyingImage}}>
+        <MagnifyingContextProvider value={{ changeImage, magnifyingImage, setMagnifyingImage, editmagnifyingImage, seteditmagnifyingImage }}>
             <ToastContainer position="top-left" />
             <div className='w-full flex flex-col justify-content-between bg-[#fff]'>
                 <UpperBar />
