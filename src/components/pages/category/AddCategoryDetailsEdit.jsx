@@ -36,14 +36,14 @@ function AddCategoryDetailsEdit() {
 
                 />
                 <Input
-                    label="category url*"
+                    label="Category Url*"
                     placeholder="Enter category url"
                     type="text"
                     onChange={(e) => handleclick(e.target.value, 'category_url')}
                     />
 
                 <Input
-                    label="category title*"
+                    label="Category Title*"
                     placeholder="Enter category title"
                     type="text"
                     onChange={(e) => handleclick(e.target.value, 'category_title')}            
@@ -51,13 +51,13 @@ function AddCategoryDetailsEdit() {
                 />
               
                 <Input
-                    label="category image*"
+                    label="Category Image*"
                     placeholder="Enter category image"
                     type="text"
                     onChange={(e) => handleclick(e.target.value, 'category_img')}
                 />
                 <Input
-                    label="top seller*"
+                    label="Top Image  Seller*"
                     placeholder="Enter topsellers"
                     type="text"
                     onChange={(e) => handleclick(e.target.value, 'topsellers')}

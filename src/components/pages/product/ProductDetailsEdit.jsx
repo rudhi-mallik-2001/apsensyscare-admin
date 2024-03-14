@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Input, updateProductsById, Image, getProductSizes, fetchAllCategory, fetchSize } from '../../index'
+import { Input, updateProductsById, Image, getProductSizes, fetchAllCategory } from '../../index'
 import { toast } from 'react-toastify'
 
 function ProductDetailsEdit({ product, updateDetails }) {

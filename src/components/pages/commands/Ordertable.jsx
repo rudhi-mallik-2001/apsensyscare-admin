@@ -5,7 +5,7 @@ export default function Ordertable() {
     const [ordertable, setOrdertable] = useState([])
     const navigate = useNavigate();
     useEffect(() => {
-        orderCommand({ status: "payment success" })
+        orderCommand({ status: "payment_success" })
             .then((res) => {
                 setOrdertable(res)
             })

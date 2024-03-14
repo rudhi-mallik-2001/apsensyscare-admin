@@ -25,7 +25,7 @@ function CategoryDetailsEdit({ category, updateCategory }) {
                     onChange={(e) => handelCategory(e.target.value, 'category_name')}
                 />
                 <Input
-                    label="category url*"
+                    label="Category Url*"
                     placeholder="Enter category url"
                     type="text"
                     value={category.category_url}
@@ -33,7 +33,7 @@ function CategoryDetailsEdit({ category, updateCategory }) {
                 />
 
                 <Input
-                    label="category title*"
+                    label="Category Title*"
                     placeholder="Enter category title"
                     type="text"
                     value={category.category_title}
@@ -41,7 +41,7 @@ function CategoryDetailsEdit({ category, updateCategory }) {
 
                 />
                 <Input
-                    label="category url*"
+                    label="Category Url*"
                     placeholder="Enter category url"
                     type="text"
                     value={category.category_url}
@@ -49,7 +49,7 @@ function CategoryDetailsEdit({ category, updateCategory }) {
 
                 />
                 <Input
-                    label="category image*"
+                    label="Category Image*"
                     placeholder="Enter category image"
                     type="text"
                     value={category.category_img}
@@ -57,7 +57,7 @@ function CategoryDetailsEdit({ category, updateCategory }) {
 
                 />
                 <Input
-                    label="top seller*"
+                    label="Top Image Seller*"
                     placeholder="Enter topsellers"
                     type="text"
                     value={category.topsellers}
@@ -65,7 +65,7 @@ function CategoryDetailsEdit({ category, updateCategory }) {
 
                 />
                 <Input
-                    label="top product*"
+                    label="Top Product Image*"
                     placeholder="Enter topproduct"
                     type="text"
                     value={category.top_product}
@@ -73,7 +73,7 @@ function CategoryDetailsEdit({ category, updateCategory }) {
 
                 />
                 <Input
-                    label="category description*"
+                    label="Category Image Description*"
                     placeholder="Enter category description "
                     type="text"
                     value={category.category_des}

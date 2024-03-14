@@ -14,7 +14,7 @@ const SingelOrder = () => {
     status: ""
   })
   useEffect(() => {
-    fetchorderDetails(id).then((res) => {
+    fetchorderDetails({order_id:id}).then((res) => {
       setOrderDetails(res.shoporder[0])
       setUserDetails(res.user[0])
       setorder_lineDetails(res.order_line)
@@ -49,10 +49,10 @@ const SingelOrder = () => {
                   <select className="select select-bordered" onChange={(e) => handleChange(e)}>
                     <option disabled selected>Pick one</option>
                     {
-                      orderDetails.order_status === 'pending' ? <option value="pending" selected>Pending</option> : <option value="pending">Pending</option>
+                      orderDetails.order_status === "payment pending" ? <option value="payment pending" selected>Pending</option> : <option value="payment pending">Pending</option>
                     }
                     {
-                      orderDetails.order_status === 'ordered' ? <option value="ordered" selected>Ordered</option> : <option value="ordered">Ordered</option>
+                      orderDetails.order_status === 'payment_success' ? <option value="payment_success" selected>Ordered</option> : <option value="payment_success">Ordered</option>
                     }
                     {
                       orderDetails.order_status === 'delivered' ? <option value="delivered" selected>Delivered</option> : <option value="delivered">Delivered</option>
@@ -183,8 +183,8 @@ const SingelOrder = () => {
           <div className='w-full flex flex-col justify-start items-start px-4 py-4 gap-2'>
             <h2 className='font-bold text-[20px]'>Total</h2>
             <div className='w-full flex flex-row justify-between items-center'>
-              <div>price</div>
-              <div>{orderDetails.order_total}</div>
+              <div className='font-bold'>Price</div>
+              <div className='font-bold'>{orderDetails.order_total}.00</div>
             </div>
           </div>
         </div>

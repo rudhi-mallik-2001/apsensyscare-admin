@@ -9,6 +9,7 @@ import Addcategorycont from './components/pages/category/Addcategorycont.jsx'
 import Addproductcont from './components/pages/product/Addproductcont.jsx'
 import { checkTokenLoader } from './utils/utils.js'
 import Addproductsize from './components/pages/category/Addproductsize.jsx'
+import Customerform from './components/pages/coustemers/Customerform.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,6 +28,7 @@ const router = createBrowserRouter(
         <Route path='add-size' element={<Addproductsize />} />
         <Route path='commands' element={<Commands />} />
         <Route path='commands/orders/:id' element={<SingelOrder />} />
+        <Route path='customers/:userid' element={<Customerform />} />
       </Route>
       <Route path='sign-in' element={<SignIn/>}/>
     </Route>
