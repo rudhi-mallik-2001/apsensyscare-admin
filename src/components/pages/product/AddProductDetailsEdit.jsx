@@ -151,7 +151,7 @@ export default function AddProductDetailsEdit() {
                     onChange={(e) => handleProduct(e.target.value, 'product_image')}
                 />
                 <div className='w-full h-[50px] flex  items-center'>
-                    <button type='button' className="btn btn-sm btn-success" onClick={productclick}>Add Category </button>
+                    <button type='button' className="btn btn-sm btn-success" onClick={productclick}>Add Product </button>
                 </div>
             </div>
             <div className='w-full  flex flex-col  justify-start items-start gap-2 p-6'>

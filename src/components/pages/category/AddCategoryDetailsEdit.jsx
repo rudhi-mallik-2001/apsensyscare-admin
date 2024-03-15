@@ -30,7 +30,7 @@ function AddCategoryDetailsEdit() {
          <div className='w-[50%]'>
                 <Input
                     label="Category Name*"
-                    placeholder="Enter Your Product"
+                    placeholder="Enter Your Category"
                     type="text"
                     onChange={(e) => handleclick(e.target.value, 'category_name')}
 
@@ -57,25 +57,25 @@ function AddCategoryDetailsEdit() {
                     onChange={(e) => handleclick(e.target.value, 'category_img')}
                 />
                 <Input
-                    label="Top Image  Seller*"
+                    label="Top  Seller*"
                     placeholder="Enter topsellers"
                     type="text"
                     onChange={(e) => handleclick(e.target.value, 'topsellers')}
                 />
                   <Input
                     label="Top Seller Description*"
-                    placeholder="Enter descripption"
+                    placeholder="Enter description"
                     type="text"
                     onChange={(e) => handleclick(e.target.value, 'topsellers_desc')}
                 />
                 <Input
-                    label="top product*"
-                    placeholder="Enter topproduct"
+                    label="Top Product*"
+                    placeholder="Enter top product"
                     type="text"
                     onChange={(e) => handleclick(e.target.value, 'top_product')}
                 />
                 <Input
-                    label="category description*"
+                    label="Category Description*"
                     placeholder="Enter category description "
                     type="text"
                     onChange={(e) => handleclick(e.target.value, 'category_des')}
