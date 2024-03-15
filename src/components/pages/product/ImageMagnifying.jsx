@@ -13,7 +13,7 @@ function ImageMagnifying({ image = '', path = '', handelclick = () => { }, image
 
         seteditmagnifyingImage((prev) => ({ ...prev, [imagesize]: imagesArray }))
     }, [image])
-    const handelImage = (image, imagesize,index) => {
+    const handelImage = (image, imagesize, index) => {
         // if (path == 'carousel-100-100') {
         //     UploadNewImage('image_100', image)
         // } else if (path === 'carousel-230-460') {
@@ -22,8 +22,8 @@ function ImageMagnifying({ image = '', path = '', handelclick = () => { }, image
         //     UploadNewImage('image_1200', image)
         // }
         console.log(image)
-        const item=editmagnifyingImage[imagesize]
-        item[index]=image;
+        const item = editmagnifyingImage[imagesize]
+        item[index] = image;
         seteditmagnifyingImage((prev) => ({ ...prev, [imagesize]: item }))
         console.log(image, path)
     }
@@ -31,7 +31,7 @@ function ImageMagnifying({ image = '', path = '', handelclick = () => { }, image
         <div className='w-full flex flex-row justify-start items-start flex-wrap gap-2 '>
             <div className='w-fit flex flex-row justify-start items-start flex-wrap gap-2 p-4  relative'>
                 {
-                   magimage.map((image) => {
+                    magimage.map((image) => {
                         if (image != '')
                             return (
                                 <div className="w-24 relative border-2">
@@ -43,13 +43,20 @@ function ImageMagnifying({ image = '', path = '', handelclick = () => { }, image
                                     </div>
                                 </div>
                             )
-                    }) 
+                    })
                 }
             </div>
             <div className='w-[300px] flex flex-col gap-1'>
-                <Input value={magimage[0] !== undefined ? magimage[0] : editmagnifyingImage[imagesize][0]} onChange={(e) => handelImage(e.target.value, imagesize,0)} />
-                <Input value={magimage[1] !== undefined ? magimage[1] : editmagnifyingImage[imagesize][1]} onChange={(e) => handelImage(e.target.value, imagesize,1)} />
-                <Input value={magimage[2] !== undefined ? magimage[2] : editmagnifyingImage[imagesize][2]} onChange={(e) => handelImage(e.target.value, imagesize,2)} />
+                {
+                    magimage.map((image, id) => {
+                        return (
+                            <Input value={magimage[id] !== undefined ? magimage[id] : editmagnifyingImage[imagesize][id]} onChange={(e) => handelImage(e.target.value, imagesize, id)} />
+                        )
+                    })
+                }
+                {/* <Input value={magimage[0] !== undefined ? magimage[0] : editmagnifyingImage[imagesize][0]} onChange={(e) => handelImage(e.target.value, imagesize, 0)} />
+                <Input value={magimage[1] !== undefined ? magimage[1] : editmagnifyingImage[imagesize][1]} onChange={(e) => handelImage(e.target.value, imagesize, 1)} />
+                <Input value={magimage[2] !== undefined ? magimage[2] : editmagnifyingImage[imagesize][2]} onChange={(e) => handelImage(e.target.value, imagesize, 2)} /> */}
             </div>
             <div>
                 <Image folder={`all_products/${path}`} path={path} />

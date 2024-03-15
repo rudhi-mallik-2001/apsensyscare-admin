@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { revenueHistory } from '../../api/Api'
 import { Line } from 'react-chartjs-2'
 import { Chart as ChartJS, defaults } from "chart.js/auto";
-defaults.maintainAspectRatio = false;
+defaults.maintainAspectRatio = true;
 defaults.responsive = true;
 
 defaults.plugins.title.display = true;
@@ -17,7 +17,7 @@ function RevenueHistory() {
     }) 
   },[])
   
-  console.log(revenue)
+  // console.log(revenue)
   const revenueData = [
     {
       "label": "Jan",

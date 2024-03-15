@@ -137,4 +137,9 @@ export const Deleteuser = async (id) => {
         .post("http://apsensyscare.com/backend_api/deleteuser", id)
         .then((response) => response.data)
 };
+export const imageMagnified = async (data) => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/imagemagnified", data)
+        .then((response) => response.data)
+};
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ImageMagnifying from './ImageMagnifying';
-import { imagMagnifing } from '../../index'
+import { imagMagnifing, imageMagnified } from '../../index'
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useMagnifyingContext } from '../../../context/categoryFilterContext';
@@ -36,11 +36,17 @@ function Magnifingimage() {
         // seteditmagnifyingImage((prev)=>({...prev,[key]:item}))
         console.log(editmagnifyingImage)
     }
-    const updateMagnifiedImage=()=>{
-        if(editmagnifyingImage.image_100.length===editmagnifyingImage.image_1200.length===editmagnifyingImage.image_230.length){
-            const image_100=editmagnifyingImage.image_100.join('@@@')
-            const image_230=editmagnifyingImage.image_230.join('@@@')
-            const image_1200=editmagnifyingImage.image_1200.join('@@@')
+    const updateMagnifiedImage = () => {
+        if (editmagnifyingImage.image_100.length === editmagnifyingImage.image_1200.length && editmagnifyingImage.image_100.length === editmagnifyingImage.image_230.length&& editmagnifyingImage.image_1200.length===editmagnifyingImage.image_230.length) {
+            console.log(editmagnifyingImage.image_230.length)
+            const image_100 = editmagnifyingImage.image_100.join('@@@')
+            const image_230 = editmagnifyingImage.image_230.join('@@@')
+            const image_1200 = editmagnifyingImage.image_1200.join('@@@')
+            imageMagnified({ image_100, image_230, image_1200 }).then(() => {
+                toast.success('update success')
+            })
+        } else {
+            toast.warning('all fields are Important')
         }
     }
     return (
@@ -53,7 +59,7 @@ function Magnifingimage() {
             <h2><strong>Large Image [1200px/1800px]</strong></h2>
             <ImageMagnifying image={magnifyingImage?.image_1200} path={'carousel-1200-1800'} handelclick={handelclick} UploadNewImage={UploadNewImage} imagesize="image_1200" />
 
-            <button className="btn w-[5%] btn-success" onClick={updateMagnifiedImage} >Save</button>
+            <button className="btn w-[5%] btn-success" onClick={() => updateMagnifiedImage()} >Saved</button>
         </div>
     )
 }
