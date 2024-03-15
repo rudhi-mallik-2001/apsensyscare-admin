@@ -9,13 +9,15 @@ function CategoryDetailsEdit({ category, updateCategory }) {
     }
     const uploadCategory = (value) => {
         // console.log(value)
-        updateCategoryById(value).then((res) => {
+        updateCategoryById(value).then((res) => { 
             console.log(res);
             toast("Update success");
         })
     }
     return (
-        <div className='w-[100%] p-2 flex flex-row  gap-2 border rounded-md'>
+        
+        <div className='w-[100%] p-2 flex flex-row  gap-2 border rounded-md '>
+            
             <div className='w-[50%]'>
                 <Input
                     label="Category Name*"
