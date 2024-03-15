@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Input,CategoryDetailsEdit,fetchCategoryById } from "../../index"
+import { CategoryDetailsEdit,fetchCategoryById } from "../../index"
+import { Link } from 'react-router-dom'
+
 const CategoryEdit = () => {
     const { id } = useParams();
     // console.log(id);
@@ -20,7 +22,10 @@ const CategoryEdit = () => {
       setCategorydetails((prev) => { return { ...prev, [key]: value } }); 
   }
     return (
-        <div className='w-full p-3'>
+        <div className='w-full p-3'> 
+         <div className='w-[100%] border rounded-md p-2 flex justify-end  gap-y-2 mb-2'>
+                <Link class="w-[10%] border flex flex-row justify-around cursor-pointer rounded-md hover:bg-[#ffb356] hover:text-[#fff] py-1" to={'/add-category'}>Add Category</Link>
+            </div>
 
             <div className='w-full flex flex-col justify-start' action="" method="post">
                 <div role="tablist" className="tabs tabs-lifted " >

@@ -14,7 +14,8 @@ export default function AddProductDetailsEdit() {
         default_size: "",
         description: "",
         long_description: "",
-        product_image: ""
+        product_image: "",
+        stock_qty:""
     }
     const [addproduct, setAddproduct] = useState(productkey)
     const [adddetails, setAdddetails] = useState([])
@@ -54,7 +55,7 @@ export default function AddProductDetailsEdit() {
                     placeholder="Enter Your Product"
                     type="text"
                     onChange={(e) => handleProduct(e.target.value, 'brand_name')}
-
+                    
                 />
                 <label className="form-control w-full ">
                     <div className="label">
@@ -107,12 +108,12 @@ export default function AddProductDetailsEdit() {
 
                 />
 
-                {/* <Input
-                    label="Enter default size*"
-                    placeholder="Enter default size"
+                <Input
+                    label="Enter stock*"
+                    placeholder="Enter stock"
                     type="text"
-                    onChange={(e) => handleProduct(e.target.value, 'default_size')}
-                /> */}
+                    onChange={(e) => handleProduct(e.target.value, 'stock_qty')}
+                />
 
                 <label className="form-control w-full ">
 
