@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import {  ProductDetailsEdit, fetchProductdetailsById } from "../../index"
 import Magnifingimage from './Magnifingimage';
+// import Addmaginifingimg from './Addmaginifingimg';
 import Varitysizingimage from './Varitysizingimage';
 // import Addproductcont from './Addproductcont';
 const ProductEdit = () => {
@@ -26,9 +27,11 @@ const ProductEdit = () => {
  
     return (
         <div className='w-[calc(100vw_-_200px)] flex flex-col justify-start px-3'>
-            <div className='w-[100%] border rounded-md p-2 flex justify-end  gap-y-2 mb-2'>
+            <div className='w-[100%] border rounded-md p-2 flex flex-row justify-end  gap-y-2 mb-2 gap-2'>
                 <Link class="w-[10%] border flex flex-row justify-around cursor-pointer rounded-md hover:bg-[#ffb356] hover:text-[#fff] py-1" to={'/add-product'}>Add Product</Link>
+                <Link class="w-[10%] border flex flex-row justify-around cursor-pointer rounded-md hover:bg-[#ffb356] hover:text-[#fff] py-1" to={'/add-size'}>Add size</Link>
             </div> 
+            
             <div className='w-full flex flex-col justify-start' action="" method="post">
                 <div role="tablist" className="tabs tabs-lifted " >
                    

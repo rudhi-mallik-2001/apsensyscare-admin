@@ -40,9 +40,12 @@ export const Addcategory = async (category) => {
         .post("http://apsensyscare.com/backend_api/addcategory", category)
         .then((response) => response.data)
 };
-export const Addproduct = async (product) => {
+export const Addproduct = async (product,Image) => {
+    const temp={
+        product,Image
+    }
     return await axios
-        .post("http://apsensyscare.com/backend_api/addproduct", product)
+        .post("http://apsensyscare.com/backend_api/addproduct", temp)
         .then((response) => response.data)
 };
 

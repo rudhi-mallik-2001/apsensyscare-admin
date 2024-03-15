@@ -1,48 +1,25 @@
 import React, { useState, useEffect } from 'react'
-import { Input, Image, fetchAllCategory, fetchSize,Addproduct } from '../../index'
-import { toast } from 'react-toastify'
+import { Input, Image, fetchAllCategory, fetchSize } from '../../index'
 
-export default function AddProductDetailsEdit() {
-    const productkey = {
-        brand_name: "",
-        category_id: "",
-        name: "", 
-        short_name: "",
-        search_keywords: "",
-        product_url: "",
-        default_price: "",
-        default_size: "",
-        description: "",
-        long_description: "",
-        product_image: "",
-        stock_qty:""
-    }
-    const [addproduct, setAddproduct] = useState(productkey)
+export default function AddProductDetailsEdit({updateDetails}) {
+   
+    const [addproduct, setAddproduct] = useState()
     const [adddetails, setAdddetails] = useState([])
     const [productsize, setproductsize] = useState([])
 
     const handleProduct = (val, key) => {
-        setAddproduct((prev) => ({ ...prev, [key]: val }))
+        updateDetails(val,key)
     }
-    const productclick = () => {
-        Addproduct(addproduct).then(()=>{
-            // console.log("clicking");
-            toast.success('Update Success')
-            setAddproduct(productkey)
-        })
-        console.log("submitted", addproduct);
-    }
+   
     useEffect(() => {
        
         fetchAllCategory().then((res) => {
-            console.log("category call");
             setAdddetails(res)
         })
 
     }, [])
     useEffect(() => {
         fetchSize().then((res) => {
-            console.log('size called')
             setproductsize(res);
         })
     }, [])
@@ -50,6 +27,7 @@ export default function AddProductDetailsEdit() {
     return (
         <div className='w-[98%] p-2 flex flex-row  gap-2 border rounded-md'>
             <div className='w-[50%]'>
+                
                 <Input
                     label="Enter the brand Name*"
                     placeholder="Enter Your Product"
@@ -151,9 +129,9 @@ export default function AddProductDetailsEdit() {
                     type="text"
                     onChange={(e) => handleProduct(e.target.value, 'product_image')}
                 />
-                <div className='w-full h-[50px] flex  items-center'>
+                {/* <div className='w-full h-[50px] flex  items-center'>
                     <button type='button' className="btn btn-sm btn-success" onClick={productclick}>Add Product </button>
-                </div>
+                </div> */}
             </div>
             <div className='w-full  flex flex-col  justify-start items-start gap-2 p-6'>
                 <div className='border-2 rounded-md'>
