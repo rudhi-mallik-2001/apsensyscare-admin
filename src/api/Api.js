@@ -1,4 +1,5 @@
 import axios from "axios"
+import { toast } from "react-toastify";
 export const fetchProducts = async (id) => {
     return await axios
         .post("http://apsensyscare.com/backend_api/categoryproducts", id)
@@ -96,7 +97,8 @@ export const fetchorderDetails = async (id) => {
 export const fetchUser = async (data) => {
     return await axios
         .post("http://apsensyscare.com/backend_api/admin-login", data)
-        .then((response) => response.data.details)
+        .then((response) => response.data)
+        .catch((error)=> error.response.data)
 };
 export const orderCommand = async (data) => {
     return await axios
@@ -143,6 +145,11 @@ export const Deleteuser = async (id) => {
 export const imageMagnified = async (data) => {
     return await axios
         .post("http://apsensyscare.com/backend_api/imagemagnified", data)
+        .then((response) => response.data)
+};
+export const AddBanners = async (data) => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/addbanners", data)
         .then((response) => response.data)
 };
 

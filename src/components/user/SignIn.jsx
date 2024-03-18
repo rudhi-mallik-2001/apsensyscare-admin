@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { fetchUser } from '../index'
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const SignIn = () => {
   const navigate = useNavigate()
@@ -8,12 +9,18 @@ const SignIn = () => {
     email: '',
     password: '',
   })
-  console.log(user)
+  // console.log(user)
   const handelsubmit = () => {
     fetchUser(user).then((res) => {
       // console.log(res)
-      localStorage.setItem('REFRESSTOKEN',res.cookies)
-      navigate('/');
+      if(res.status===200){
+        toast.success('Login Success')
+        localStorage.setItem('REFRESSTOKEN',res.cookies)
+        navigate('/');
+      }else {
+        toast.warning(res.message)
+      }
+      
     })
   }
   return (
