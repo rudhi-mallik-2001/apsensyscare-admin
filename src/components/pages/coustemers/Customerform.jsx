@@ -47,6 +47,7 @@ export default function Customerform() {
       updatePassword(password)
         .then(() => {
           console.log('Password updated successfully');
+          toast.success('Password updated successfully')
           // Reset password fields or perform any other necessary actions
           setPassword(initialPasswordState);
         })
@@ -94,7 +95,7 @@ export default function Customerform() {
                   label="Enter Email*"
                   placeholder="Enter Email"
                   type="email"
-                  value={customeredit.email_address}
+                  value={decodeURIComponent(customeredit.email_address)}
                 />
                 <div className="">
                   <label className="form-control w-full ">

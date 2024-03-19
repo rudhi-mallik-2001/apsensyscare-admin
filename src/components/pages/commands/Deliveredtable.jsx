@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { orderCommand } from '../../../api/Api'
+import { useNavigate } from 'react-router-dom';
 
 export default function Deliveredtable() {
     const [deliveredtable, setDeliveredtable] = useState([])
+    const navigate = useNavigate();
     useEffect(() => {
-        orderCommand({ status: "Delivered" })
-        .then((res) => {
-            // setDeliveredtable(res);
-        })
+        orderCommand({ status: "delivered" })
+            .then((res) => {
+                setDeliveredtable(res);
+            })
     }, [])
-
+    const openOrderDetails = (orderId) => {
+        navigate(`/commands/orders/${orderId}`)
+    }
     return (
 
         <div className='w-full flex flex-col'>
@@ -58,41 +62,41 @@ export default function Deliveredtable() {
                     </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 bg-white">
-                    {deliveredtable.map((dtable) => (
-                        <tr key={dtable.Date}>
+                    {deliveredtable.map((data) => (
+                        <tr key={data.order_date} className=' hover:bg-gray-200 cursor-pointer' onClick={() => openOrderDetails(data.order_id)}>
                             <td className="whitespace-nowrap px-4 py-4">
                                 <div className="flex items-center">
-                                    <div className="text-sm font-medium text-gray-900">{dtable.Date}</div>
+                                    <div className="text-sm font-medium text-gray-900">{data.order_date}</div>
                                     {/* <div className="h-10 w-10 flex-shrink-0">
-                                        <img
-                                            className="h-10 w-10 rounded-full object-cover"
-                                            src={person.image}
-                                            alt=""
-                                        />
-                                    </div> */}
+                                <img
+                                    className="h-10 w-10 rounded-full object-cover"
+                                    src={person.image}
+                                    alt=""
+                                />
+                            </div> */}
                                     {/* <div className="ml-4">
-                                        <div className="text-sm font-medium text-gray-900">{person.name}</div>
-                                        <div className="text-sm text-gray-700">{person.email}</div>
-                                    </div> */}
+                                <div className="text-sm font-medium text-gray-900">{person.name}</div>
+                                <div className="text-sm text-gray-700">{person.email}</div>
+                            </div> */}
                                 </div>
                             </td>
                             <td className="whitespace-nowrap px-12 py-4">
-                                <div className="text-sm text-gray-900 ">{dtable.Refrence}</div>
+                                <div className="text-sm text-gray-900 ">{data.order_id}</div>
 
                             </td>
                             <td className="whitespace-nowrap px-4 py-4">
-                                <div className="text-sm text-gray-900 ">{person.Customer}</div>
+                                <div className="text-sm text-gray-900 ">{data.f_name}</div>
 
                             </td>
                             <td className="whitespace-nowrap px-4 py-4 text-sm text-gray-700">
-                                {dtable.Address}
+                                {data.area_landmark}<br />{data.city} {data.house_flat_office}
                             </td>
                             <td className="whitespace-nowrap px-4 py-4  text-sm font-medium">
-                                {dtable.Item}
+                                {data.total_quantity}
 
                             </td>
                             <td className="whitespace-nowrap px-4 py-4  text-sm font-medium">
-                                {dtable.total}
+                                {data.order_total}
 
                             </td>
                         </tr>

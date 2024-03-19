@@ -4,9 +4,10 @@ import AddProductDetailsEdit from './AddProductDetailsEdit';
 // import Magnifingimage from './Magnifingimage';
 import Addmaginifingimg from './Addmaginifingimg';
 import { Addproduct } from '../../../api/Api';
+import { toast } from 'react-toastify';
 
 
-export default function Addproductcont() {
+export default function Addproductcont() { 
 
     const productkey = {
         brand_name: "",
@@ -69,7 +70,7 @@ export default function Addproductcont() {
         }
         Addproduct(productdetails,Imagedetails).then(() => {
             // console.log("clicking");
-            toast.success('Update Success')
+            toast.success('Product added  Successfully')
             setProductdetails(productkey)
         })
         console.log("submitted", productdetails);

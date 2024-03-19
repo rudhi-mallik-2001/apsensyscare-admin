@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams,Link } from 'react-router-dom';
 import { fetchorderDetails, Updatestatus } from '../../index'
+import { toast } from 'react-toastify';
 
 const SingelOrder = () => {
   const { id } = useParams();
@@ -29,7 +30,7 @@ const SingelOrder = () => {
   }
   console.log("submitted", updateproduct);
   // console.log(userDetails)
-  console.log(orderDetails)
+  // console.log(orderDetails)
   const handleChange = (e) => {
     setUpdateproduct((prev) => ({ ...prev, status: e.target.value }))
     setUpdateproduct((prev) => ({ ...prev, order_id: orderDetails.order_id }))
@@ -61,7 +62,7 @@ const SingelOrder = () => {
                       orderDetails.order_status === 'return' ? <option value="return" selected>Return</option> : <option value="return">Return</option>
                     }
                     {
-                      orderDetails.order_status === 'cancelled' ? <option value="cancelled" selected>Cancelled</option> : <option value="cancelled">Cancelled</option>
+                      orderDetails.order_status === 'canceled' ? <option value="canceled" selected>Cancelled</option> : <option value="canceled">Cancelled</option>
                     }
                     {
                       orderDetails.order_status === 'other' ? <option value="other" selected>Other</option> : <option value="other">Other</option>
@@ -87,9 +88,10 @@ const SingelOrder = () => {
             </div> */}
 
             </div>
-            <div className='w-[30%] flex flex-col'>
+            <div className='w-[30%] flex flex-col'> 
               <h2 className='font-bold text-[20px]'>Customer</h2>
-              <p className='text-[blue] font-semibold	'>{userDetails.f_name}</p>
+              <Link to={`/customers/${orderDetails?.user_id}`}>
+              <p className='text-[blue] font-semibold'>{userDetails.f_name}</p> </Link>
               <a href={`mailto:${decodeURIComponent(userDetails.email_address)}`} className='text-[blue] font-semibold	'>
                 {decodeURIComponent(userDetails.email_address)}
               </a>
