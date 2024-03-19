@@ -1,11 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
-import {  ProductDetailsEdit, fetchProductdetailsById } from "../../index"
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import {  ProductDetailsEdit, fetchProductdetailsById,deleteProduct } from "../../index"
 import Magnifingimage from './Magnifingimage';
 // import Addmaginifingimg from './Addmaginifingimg';
 import Varitysizingimage from './Varitysizingimage';
+import { toast } from 'react-toastify';
+
 // import Addproductcont from './Addproductcont';
 const ProductEdit = () => {
+    const navigate = useNavigate();
     const { id } = useParams();
     // console.log(id);
     const ref = useRef()
@@ -23,7 +26,12 @@ const ProductEdit = () => {
     const updateDetails = (value, key) => {
         setDetails((prev) => { return { ...prev, [key]: value } });
     }
- 
+ const deleteproduct=(id)=>{
+    deleteProduct({id}).then((res)=>{
+        navigate('/products')
+        toast.success('Delete Success');
+    })
+ }
  
     return (
         <div className='w-[calc(100vw_-_200px)] flex flex-col justify-start px-3'>
@@ -67,7 +75,7 @@ const ProductEdit = () => {
                 </div>
                 <div className='flex flex-row justify-between bg-[#d9d9d9] px-6 py-3 rounded-b-[10px]'>
                     {/* <button className="btn btn-sm btn-success">Success</button> */}
-                    <button className="btn btn-sm btn-error">Delete</button>
+                    <button className="btn btn-sm btn-error" onClick={()=>deleteproduct(id)}>Delete</button>
                 </div>
             </div>
         </div>

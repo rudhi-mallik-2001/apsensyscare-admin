@@ -1,5 +1,5 @@
 import React from 'react'
-import { Menu } from './index'
+// import { Menu } from './index'
 import RevenueHistory from './RevenueHistory'
 import Pendingorder from './Pendingorder'
 
@@ -7,8 +7,8 @@ function DashLeftCont() {
   return (
     <div className='w-full flex flex-col  gap-y-4'>
       <div className='w-full flex flex-row gap-x-2 justify-between'>
-        <Menu />
-        <Menu />
+        {/* <Menu />
+        <Menu /> */}
       </div>
       <div className='w-full border p-4  rounded-md'>
         <RevenueHistory />

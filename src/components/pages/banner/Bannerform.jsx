@@ -3,6 +3,7 @@ import Rightbannerform from './Rightbannerform'
 import Leftbannerform from './Leftbrandsform'
 import Image from '../../../others/Image'
 import { AddBanners } from '../../index'
+import { toast } from 'react-toastify'
 const keys={
     brand_name:"",
     featured_brand_link:"",
@@ -16,8 +17,8 @@ export default function Bannerform() {
     const [brandsbanner, setBrandsbanners] = useState(keys)
     const Addbrands=()=>{
         AddBanners(brandsbanner).then((res)=>{
-            console.log(res);
-            toast("Insert success");
+            // console.log(res);
+            toast.success("Insert success");
         })
         console.log("Submitted:", brandsbanner);
         

@@ -13,7 +13,7 @@ function Reviews() {
                 <Review /> */}
 
             </div>
-            <Link class="border flex flex-row justify-around cursor-pointer rounded-md " to={'/customers'}>
+            <Link className="border flex flex-row justify-around cursor-pointer rounded-md " to={'/customers'}>
                 <button class="w-full bg-grey hover:bg-[#ffb356] text-black hover:text-white rounded-md">
                     See all Users
                 </button>

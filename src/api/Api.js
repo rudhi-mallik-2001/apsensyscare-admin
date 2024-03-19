@@ -152,4 +152,9 @@ export const AddBanners = async (data) => {
         .post("http://apsensyscare.com/backend_api/addbanners", data)
         .then((response) => response.data)
 };
+export const deleteProduct = async (data) => {
+    return await axios
+        .post("http://apsensyscare.com/backend_api/productdelete", data)
+        .then((response) => response.data)
+};
 

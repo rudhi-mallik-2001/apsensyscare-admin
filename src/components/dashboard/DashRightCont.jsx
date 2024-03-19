@@ -7,7 +7,7 @@ function DashRightCont() {
     <div className='w-full flex flex-row  gap-x-4'>
       <div className='flex flex-col gap-y-4 max-w-[99%]'>
         <div className='w-full flex flex-row gap-x-2 justify-between'>
-          <Menu />
+          {/* <Menu /> */}
         </div>
         <div className='w-full'>
           <Reviews />

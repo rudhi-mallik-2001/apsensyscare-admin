@@ -1,23 +1,27 @@
 import { useNavigate } from "react-router-dom";
-
+import { Link } from 'react-router-dom'
 const UpperBar = () => {
     const navigate = useNavigate()
 
-    const handellogout=()=>{
+    const handellogout = () => {
         localStorage.removeItem('REFRESSTOKEN')
         navigate('/');
     }
     return (
-        <div className="navbar bg-base-100 justify-between border-b-2 mb-2">
-            <div className="flex-none">
-                <button className="btn btn-square btn-ghost">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#000" className="inline-block w-5 h-5 "><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                </button>
-            </div>
-            <div className="flex-none gap-2">
-                <div className="form-control">
-                    <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
+        <div className="navbar  justify-between border-b-2 mb-2 bg-blue-600">
+            <Link to={'/'}>
+                <div className="flex-none w-[80%]">
+                    <button className="btn btn-square btn-ghost w-[60%]">
+                        {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#000" className="inline-block w-5 h-5 "><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg> */}
+                        <img src="https://apsensyscare.com/website-logo-200-100.png" alt="" />
+                    </button>
+
                 </div>
+            </Link>
+            <div className="flex-none gap-2">
+                {/* <div className="form-control">
+                    <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
+                </div> */}
                 <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
